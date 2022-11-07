@@ -2,10 +2,10 @@
 
 namespace UserLookupService.Abstractions.Interfaces.IRepo
 {
-    public interface IFishingTournamentRepository : IEventRepository
+    public interface IFishingTournamentRepository 
     {
-        Task<FishingTournamentEvent> AddEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken);
+        Task AddEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken);
         Task DeleteEventAsync(Guid id, CancellationToken cancellationToken);
-        Task<FishingTournamentEvent> UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken);
+        Task UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken);
     }
 }

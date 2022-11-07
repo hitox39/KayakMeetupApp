@@ -4,67 +4,50 @@ namespace UserLookupService.Data.Models
 {
     public class FishingTournamentModelMapper
     {
-        public static Abstractions.FishingTournamentEvent ToBusiness(FishingTournamentEvent raceEvent)
 
+        public static Abstractions.Models.FishingTournamentEvent ToBusiness(FishingTournamentEvent fishingTournamentEvent)
         {
-            return new Abstractions.FishingTournamentEvent
+            return new Abstractions.Models.FishingTournamentEvent
 
             {
-                CityName = raceEvent.CityName,
-                State = raceEvent.State,
-                Country = raceEvent.Country,
-                Id = raceEvent.Id,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
-                PrizePool = raceEvent.PrizePool,
-                ZipCode = raceEvent.ZipCode,
-
+                CityName = fishingTournamentEvent.CityName,
+                State = fishingTournamentEvent.State,
+                Country = fishingTournamentEvent.Country,
+                Id = fishingTournamentEvent.Id,
+                Latitude = fishingTournamentEvent.Latitude,
+                Longitude = fishingTournamentEvent.Longitude,
+                PrizePool = fishingTournamentEvent.PrizePool,
+                ZipCode = fishingTournamentEvent.ZipCode,
             };
         }
 
-        public static Abstractions.FishingTournamentEvent ToBusiness(AddFishingTournamentEvent raceEvent)
-        {
-            return new Abstractions.FishingTournamentEvent
-
-            {
-                CityName = raceEvent.CityName,
-                State = raceEvent.State,
-                Country = raceEvent.Country,
-                Id = raceEvent.Id,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
-                PrizePool = raceEvent.PrizePool,
-                ZipCode = raceEvent.ZipCode,
-            };
-        }
-
-        public static FishingTournamentEvent ToDatabase(Abstractions.FishingTournamentEvent raceEvent)
+        public static FishingTournamentEvent ToDatabase(Abstractions.Models.FishingTournamentEvent fishingTournamentEvent)
         {
             return new FishingTournamentEvent
 
             {
-                CityName = raceEvent.CityName,
-                State = raceEvent.State,
-                Country = raceEvent.Country,
-                Id = raceEvent.Id,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
-                PrizePool = raceEvent.PrizePool,
-                ZipCode = raceEvent.ZipCode,
+                CityName = fishingTournamentEvent.CityName,
+                State = fishingTournamentEvent.State,
+                Country = fishingTournamentEvent.Country,
+                Id = fishingTournamentEvent.Id,
+                Latitude = fishingTournamentEvent.Latitude,
+                Longitude = fishingTournamentEvent.Longitude,
+                PrizePool = fishingTournamentEvent.PrizePool,
+                ZipCode = fishingTournamentEvent.ZipCode,
             };
         }
 
 
-        public static IList<Abstractions.FishingTournamentEvent> ToBusiness(List<FishingTournamentEvent> raceEvents)
+        public static IList<Abstractions.Models.FishingTournamentEvent> ToBusiness(List<FishingTournamentEvent> fishingTournamentEvents)
         {
-            var abstractionFishingTournamentEvents = new List<Abstractions.FishingTournamentEvent>();
+            var abstractionFishingTournamentEvents = new List<Abstractions.Models.FishingTournamentEvent>();
 
-            foreach (var raceEvent in raceEvents)
+            foreach (var fishingTournamentEvent in fishingTournamentEvents)
             {
-                abstractionFishingTournamentEvents.Add(ToBusiness(raceEvent));
+                abstractionFishingTournamentEvents.Add(ToBusiness(fishingTournamentEvent));
             }
 
-            return abstractionRaceEvents;
+            return abstractionFishingTournamentEvents;
         }
     }
 }

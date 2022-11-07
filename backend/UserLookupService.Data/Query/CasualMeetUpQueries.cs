@@ -1,73 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using UserLookupService.Abstractions.Interfaces.IQuery;
+using State = UserLookupService.Abstractions.Models.State;
+using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
+using UserLookupService.Data.Models;
+using UserLookupService.Abstractions;
 using UserLookupService.Abstractions.Models;
 
-namespace UserLookupService.Data.Query
+namespace UserLookupService.Data.Query;
+
+public class CasualMeetUpQueries : ICasualMeetUpEventQuery
 {
-    public class CasualMeetUpQueries : ICasualMeetUpEventQuery
+    private readonly MainContext _dbContext;
+
+    public CasualMeetUpQueries(MainContext dbContext)
     {
-        public Task<IList<CasualMeetUpEvent>> GetAllEventsAsync(Guid id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CasualMeetUpEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<CasualMeetUpEvent>> GetEventByCityNameAsync(string CityName, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<CasualMeetUpEvent>> GetEventByCuntry(string Country, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<CasualMeetUpEvent>> GetEventByStateAsync(State state, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<CasualMeetUpEvent>> GetEventByZipCodeAsync(int ZipCode, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IList<Event>> IEventQuery.GetAllEventsAsync(Guid id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<Event> IEventQuery.GetEventAsync(Guid id, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IList<Event>> IEventQuery.GetEventByCityNameAsync(string CityName, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IList<Event>> IEventQuery.GetEventByCuntry(string Country, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IList<Event>> IEventQuery.GetEventByStateAsync(State state, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IList<Event>> IEventQuery.GetEventByZipCodeAsync(int ZipCode, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        _dbContext = dbContext;
     }
+    public async Task<IList<CasualMeetUpEvent>> GetAllEventsAsync(CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+            .ToListAsync(cancellationToken);
+
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
+    }
+
+    public async Task<CasualMeetUpEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+            .Where(x => x.Id == id)
+            .SingleAsync(cancellationToken);
+
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
+    }
+
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByCityNameAsync(string cityName, CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+            .Where(x => x.CityName == cityName)
+            .ToListAsync(cancellationToken);
+
+           return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
+    }
+
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByCountry(string country, CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+             .Where(x => x.Country == country)
+             .ToListAsync(cancellationToken);
+
+             return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); 
+    }
+
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByStateAsync(State state, CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+            .Where(x => x.State == state)
+            .ToListAsync(cancellationToken);
+
+            return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); 
+    }
+
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(int zipCode, CancellationToken cancellationToken)
+    {
+        var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
+            .Where(x => x.ZipCode == zipCode)
+            .ToListAsync(cancellationToken);
+
+            return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); ;
+    }
+
 }

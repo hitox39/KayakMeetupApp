@@ -11,6 +11,7 @@ namespace UserLookupService.Data.Models
     {
         public Guid Id { get; set; }
         public string CityName { get; set; }
+        public string Address { get; set; }
         public State State { get; set; }
         public int ZipCode { get; set; }
         public double Latitude { get; set; }

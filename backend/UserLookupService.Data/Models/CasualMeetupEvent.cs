@@ -7,7 +7,7 @@ using UserLookupService.Abstractions.Models;
 
 namespace UserLookupService.Data.Models
 {
-    public class CausalMeetupEvent
+    public class CasualMeetUpEvent
     {
         public Guid Id { get; set; }
         public string Address { get; set; }

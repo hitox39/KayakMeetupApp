@@ -7,7 +7,7 @@ using UserLookupService.Abstractions.Models;
 
 namespace UserLookupService.Abstractions;
 
-public class FishingEventService : IEvent
+public class FishingEventService : IEvent<FishingTournamentEvent>
 {
     private readonly IFishingTournamentRepository _fishingTournamentRepository;
     private readonly ILogger<FishingEventService> _logger;
@@ -20,13 +20,12 @@ public class FishingEventService : IEvent
         _fishingTournamentQuery = fishingTournamentQuery;
     }
 
-    public async Task<FishingTournamentEvent> AddEventAsync(FishingTournamentEvent FishingTournamentEvent, CancellationToken cancellationToken)
+    public async Task AddEventAsync(FishingTournamentEvent FishingTournamentEvent, CancellationToken cancellationToken)
     {
         FishingTournamentEvent.Id = Guid.NewGuid();
 
-        await _fishingTournamentRepository.AddAsync(FishingTournamentEvent, cancellationToken);
+        await _fishingTournamentRepository.AddEventAsync(FishingTournamentEvent, cancellationToken);
 
-        return FishingTournamentEvent;
     }
 
     public async Task<FishingTournamentEvent> GetEventAsync(Guid eventid, CancellationToken cancellationToken)
@@ -35,16 +34,15 @@ public class FishingEventService : IEvent
         return await _fishingTournamentQuery.GetEventAsync(eventid, cancellationToken);
     }
 
-    public async Task<FishingTournamentEvent> DeleteEventAsync(Guid eventId, CancellationToken cancellationToken)
+    public async Task DeleteEventAsync(Guid eventId, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Attempting to delete event: [{eventId}]", eventId);
         await _fishingTournamentRepository.DeleteEventAsync(eventId, cancellationToken);
     }
 
-    public async Task<FishingTournamentEvent> UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
+    public async Task UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
     {
         var updatedEvent = await _fishingTournamentRepository.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
 
-        return updatedEvent;
     }
 }

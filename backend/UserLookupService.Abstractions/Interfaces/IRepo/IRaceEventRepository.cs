@@ -1,9 +1,9 @@
 ﻿namespace UserLookupService.Abstractions.Interfaces.IRepo
 {
-    public interface IRaceEventRepository : IEventRepository
+    public interface IRaceEventRepository 
     {
-        Task<RaceEvent> AddAsync(RaceEvent raceEvent, CancellationToken cancellationToken);
+        Task AddAsync(RaceEvent raceEvent, CancellationToken cancellationToken);
         Task DeleteRaceEventAsync(Guid id, CancellationToken cancellationToken);
-        Task<RaceEvent> UpdateRaceEventAsync(RaceEvent raceEvent, CancellationToken cancellationToken);
+        Task UpdateRaceEventAsync(RaceEvent raceEvent, CancellationToken cancellationToken);
     }
 }
