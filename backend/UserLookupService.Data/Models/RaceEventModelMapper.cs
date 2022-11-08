@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UserLookupService.Abstractions;
+﻿using UserLookupService.Abstractions;
 
 namespace UserLookupService.Data.Models
 {
@@ -18,6 +13,7 @@ namespace UserLookupService.Data.Models
                 CityName = raceEvent.CityName,
                 State = raceEvent.State,
                 Country = raceEvent.Country,
+                Address = raceEvent.Address,
                 Id = raceEvent.Id,
                 Latitude = raceEvent.Latitude,
                 Longitude = raceEvent.Longitude,
@@ -35,7 +31,8 @@ namespace UserLookupService.Data.Models
                 CityName = raceEvent.CityName,
                 State = raceEvent.State,
                 Country = raceEvent.Country,
-                Id = raceEvent.Id,
+                Id = Guid.NewGuid(),
+                Address = raceEvent.Address,
                 Latitude = raceEvent.Latitude,
                 Longitude = raceEvent.Longitude,
                 PrizePool = raceEvent.PrizePool,
@@ -52,6 +49,7 @@ namespace UserLookupService.Data.Models
                 State = raceEvent.State,
                 Country = raceEvent.Country,
                 Id = raceEvent.Id,
+                Address = raceEvent.Address,
                 Latitude = raceEvent.Latitude,
                 Longitude = raceEvent.Longitude,
                 PrizePool = raceEvent.PrizePool,

@@ -8,7 +8,7 @@ using UserLookupService.Abstractions.Models;
 
 namespace UserLookupService.Data.Models
 {
-    public class FishsingTournamentEvent
+    public class FishingTournamentEvent
     {
         public Guid Id { get; set; }
         public string CityName { get; set; }

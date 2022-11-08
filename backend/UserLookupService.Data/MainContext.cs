@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using UserLookupService.Abstractions.Models;
 using UserLookupService.Data.Models;
+using FishingTournamentEvent = UserLookupService.Data.Models.FishingTournamentEvent;
 using RaceEvent = UserLookupService.Data.Models.RaceEvent;
 using User = UserLookupService.Data.Models.User;
+using CasualMeetUpEvent = UserLookupService.Data.Models.CasualMeetUpEvent;
 
 namespace UserLookupService.Data;
 
@@ -24,7 +26,7 @@ public class MainContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         UserTable(modelBuilder);
-        CasualMeetUpventTable(modelBuilder);
+        CasualMeetUpEventTable(modelBuilder);
         FishingTournamentEventTable(modelBuilder);
         RaceEventTable(modelBuilder);
     }
@@ -113,7 +115,7 @@ public class MainContext : DbContext
 
     }
 
-    private static void CasualMeetUpventTable(ModelBuilder modelBuilder)
+    private static void CasualMeetUpEventTable(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CasualMeetUpEvent>().ToTable("CasualMeetUpEvent");
         modelBuilder.Entity<CasualMeetUpEvent>().HasKey(cm => cm.Id);
