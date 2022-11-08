@@ -14,11 +14,11 @@ using FishingTournamentEvent = UserLookupService.Abstractions.Models.FishingTour
 
 namespace UserLookupService.Data.Query
 {
-    internal class FishingEventQueries : IFishingTournamentQueries
+    internal class FishingTournamentQueries : IFishingTournamentQueries
     {
         private readonly MainContext _dbContext;
 
-        public FishingEventQueries(MainContext dbContext)
+        public FishingTournamentQueries(MainContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -22,7 +22,7 @@ namespace UserLookupService.Data.Repository
             _casualMeetUpQueries = casualMeetUpQueries;
         }
 
-        public async Task AddAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
+        public async Task AddEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
         {
             await _dbContext.CasualMeetUpEvents.AddAsync(CasualMeetUpModelMapper.ToDatabase(casualMeetUpEvent), cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);

@@ -17,9 +17,9 @@ namespace UserLookupService.Data.Repository
 
 
         private readonly MainContext _dbContext;
-        private readonly FishingEventQueries _fishingEventQueries;
+        private readonly FishingTournamentQueries _fishingEventQueries;
 
-        public FishingTournamentRepository(MainContext dbContext, FishingEventQueries fishingEventQueries)
+        public FishingTournamentRepository(MainContext dbContext, FishingTournamentQueries fishingEventQueries)
         {
             _dbContext = dbContext;
             _fishingEventQueries = fishingEventQueries;
