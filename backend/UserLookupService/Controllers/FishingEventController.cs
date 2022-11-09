@@ -23,7 +23,7 @@ namespace UserLookupService.Controllers
         [HttpGet("{id:Guid}")]
         public async Task<IActionResult> GetEventById([FromRoute] Guid id, CancellationToken cancellationToken)
         {
-            var getEventUseCase = _serviceProvider.GetRequiredService<FishingEventUseCases>();
+            var getEventUseCase = _serviceProvider.GetRequiredService<FishingTournamentEventUseCases>();
 
             var user = await getEventUseCase.GetEventAsync(id, cancellationToken);
 
@@ -33,7 +33,7 @@ namespace UserLookupService.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEvent([FromBody] AddFishingTournamentEvent addFishingTournamentEvent, CancellationToken cancellationToken)
         {
-            var addEventUseCase = _serviceProvider.GetRequiredService<FishingEventUseCases>();
+            var addEventUseCase = _serviceProvider.GetRequiredService<FishingTournamentEventUseCases>();
 
             var createEvent = await addEventUseCase.AddEventAsync(FishingTournamentModelMapper.ToBusiness(addFishingTournamentEvent), cancellationToken);
 
@@ -43,7 +43,7 @@ namespace UserLookupService.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteEventAsync([FromRoute] Guid id, CancellationToken cancellationToken = default)
         {
-            var deleteEventUseCase = _serviceProvider.GetRequiredService<FishingEventUseCases>();
+            var deleteEventUseCase = _serviceProvider.GetRequiredService<FishingTournamentEventUseCases>();
 
             await deleteEventUseCase.DeleteEventAsync(id, cancellationToken);
 
@@ -52,12 +52,12 @@ namespace UserLookupService.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateEvent([FromBody] Data.Models.FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
+        public async Task<IActionResult> UpdateEvent([FromBody] AddFishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
         {
 
-            var updateEventUseCase = _serviceProvider.GetRequiredService<FishingEventUseCases>();
+            var updateEventUseCase = _serviceProvider.GetRequiredService<FishingTournamentEventUseCases>();
 
-            var updatedEvent = await updateEventUseCase.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
+            await updateEventUseCase.UpdateEventAsync(FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent), cancellationToken);
 
             return Ok();
         }

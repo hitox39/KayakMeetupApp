@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RaceEvent = UserLookupService.Abstractions.RaceEvent;
-using UserLookupService.Abstractions.Interfaces.IRepo;
+﻿using UserLookupService.Abstractions.Interfaces.IRepo;
 using UserLookupService.Data.Models;
 using UserLookupService.Data.Query;
-using UserLookupService.Abstractions.Models;
 
 
 namespace UserLookupService.Data.Repository
@@ -22,7 +15,7 @@ namespace UserLookupService.Data.Repository
             _dbContext = dbContext;
             _raceEventQueries = raceEventQueries;
         }
-        public async Task AddAsync(RaceEvent raceEvent, CancellationToken cancellationToken)
+        public async Task AddAsync(Abstractions.Models.RaceEvent raceEvent, CancellationToken cancellationToken)
         {
             await _dbContext.RaceEvents.AddAsync(RaceEventModelMapper.ToDatabase(raceEvent), cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
@@ -37,7 +30,7 @@ namespace UserLookupService.Data.Repository
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task UpdateRaceEventAsync(RaceEvent raceEvent, CancellationToken cancellationToken)
+        public async Task UpdateRaceEventAsync(Abstractions.Models.RaceEvent raceEvent, CancellationToken cancellationToken)
         {
             var RaceEventUpdate = await _raceEventQueries.GetEventAsync(raceEvent.Id, cancellationToken);
 

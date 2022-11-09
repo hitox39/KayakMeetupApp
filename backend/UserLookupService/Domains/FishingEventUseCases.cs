@@ -1,31 +1,35 @@
 ﻿using UserLookupService.Abstractions.Interfaces.IQuery;
 using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
+using UserLookupService.Abstractions.Models;
 using UserLookupService.Data.Repository;
-using FishingEvent = UserLookupService.Abstractions.Models.FishingTournamentEvent;
+
 
 namespace UserLookupService.Domains
 {
-    public class FishingEventUseCases
+    public class FishingTournamentEventUseCases
     {
         private readonly IFishingTournamentRepository _fishingTournamentRepository;
         private readonly IFishingTournamentQueries _fishingTournamentQueries;
         private readonly ILogger _logger;
 
 
-        public FishingEventUseCases(IFishingTournamentRepository fishingTournamentRepository, IFishingTournamentQueries fishingTournamentQueries, ILogger logger)
+        public FishingTournamentEventUseCases(
+            IFishingTournamentRepository fishingTournamentRepository, 
+            IFishingTournamentQueries fishingTournamentQueries, 
+            ILogger logger
+            )
         {
             _fishingTournamentRepository = fishingTournamentRepository;
             _logger = logger;
             _fishingTournamentQueries = fishingTournamentQueries;
         }
 
-        public async Task<FishingEvent> AddEventAsync(FishingEvent fishingEvent, CancellationToken cancellationToken)
+        public async Task<FishingTournamentEvent> AddEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
         {
-            fishingEvent.Id = Guid.NewGuid();
-            await _fishingTournamentRepository.AddEventAsync(fishingEvent, cancellationToken);
+            fishingTournamentEvent.Id = Guid.NewGuid();
+            await _fishingTournamentRepository.AddEventAsync(fishingTournamentEvent, cancellationToken);
 
-            return fishingEvent;
+            return fishingTournamentEvent;
         }
 
         public async Task DeleteEventAsync(Guid eventId, CancellationToken cancellationToken)
@@ -34,16 +38,15 @@ namespace UserLookupService.Domains
             await _fishingTournamentRepository.DeleteEventAsync(eventId, cancellationToken);
         }
 
-        public async Task<FishingEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<FishingTournamentEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
         {
             return await _fishingTournamentQueries.GetEventAsync(id, cancellationToken);
         }
 
-        public async Task<Data.Models.FishingTournamentEvent> UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
+        public async Task UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
         {
-            var updatedEvent = await _fishingTournamentRepository.UpdateEventAsync(UserModelMapper.ToDatabase(fishingTournamentEvent), cancellationToken);
+            await _fishingTournamentRepository.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
 
-            return updatedEvent;
         }
     }
 }

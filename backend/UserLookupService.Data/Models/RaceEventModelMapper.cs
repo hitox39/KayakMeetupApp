@@ -4,10 +4,10 @@ namespace UserLookupService.Data.Models
 {
     public class RaceEventModelMapper
     {
-        public static Abstractions.RaceEvent ToBusiness(RaceEvent raceEvent)
+        public static Abstractions.Models.RaceEvent ToBusiness(RaceEvent raceEvent)
 
         {
-            return new Abstractions.RaceEvent
+            return new Abstractions.Models.RaceEvent
 
             {
                 CityName = raceEvent.CityName,
@@ -23,10 +23,9 @@ namespace UserLookupService.Data.Models
             };
         }
 
-        public static Abstractions.RaceEvent ToBusiness(AddRaceEvent raceEvent)
+        public static Abstractions.Models.RaceEvent ToBusiness(AddRaceEvent raceEvent)
         {
-            return new Abstractions.RaceEvent
-
+            return new Abstractions.Models.RaceEvent
             {
                 CityName = raceEvent.CityName,
                 State = raceEvent.State,
@@ -40,10 +39,9 @@ namespace UserLookupService.Data.Models
             };
         }
 
-        public static RaceEvent ToDatabase(Abstractions.RaceEvent raceEvent)
+        public static RaceEvent ToDatabase(Abstractions.Models.RaceEvent raceEvent)
         {
             return new RaceEvent
-
             {
                 CityName = raceEvent.CityName,
                 State = raceEvent.State,
@@ -58,9 +56,9 @@ namespace UserLookupService.Data.Models
         }
 
 
-        public static IList<Abstractions.RaceEvent> ToBusiness(List<RaceEvent> raceEvents)
+        public static IList<Abstractions.Models.RaceEvent> ToBusiness(List<RaceEvent> raceEvents)
         {
-            var abstractionRaceEvents = new List<Abstractions.RaceEvent>();
+            var abstractionRaceEvents = new List<Abstractions.Models.RaceEvent>();
 
             foreach (var raceEvent in raceEvents)
             {

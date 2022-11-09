@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UserLookupService.Abstractions.Interfaces.IRepo;
 using UserLookupService.Data.Models;
 using UserLookupService.Data.Query;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
+//using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
 
 namespace UserLookupService.Data.Repository
 {
@@ -22,7 +22,7 @@ namespace UserLookupService.Data.Repository
             _casualMeetUpQueries = casualMeetUpQueries;
         }
 
-        public async Task AddEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
+        public async Task AddEventAsync(Abstractions.Models.CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
         {
             await _dbContext.CasualMeetUpEvents.AddAsync(CasualMeetUpModelMapper.ToDatabase(casualMeetUpEvent), cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
@@ -38,7 +38,7 @@ namespace UserLookupService.Data.Repository
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task UpdateCasualMeetUpEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
+        public async Task UpdateCasualMeetUpEventAsync(Abstractions.Models.CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
         {
             var CasualMeetUpdate = await _casualMeetUpQueries.GetEventAsync(casualMeetUpEvent.Id, cancellationToken);
 

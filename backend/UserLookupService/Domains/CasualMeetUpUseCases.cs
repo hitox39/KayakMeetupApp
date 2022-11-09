@@ -8,15 +8,19 @@ namespace UserLookupService.Domains
     public class CasualMeetUpUseCases
     {
         private readonly ICasualMeetUpEventRepository _casualMeetUpEventRepository;
-        private readonly ICasualMeetUpEventRepository _casualMeetUpEventQueries;
+        private readonly ICasualMeetUpEventQuery _casualMeetUpEventQuery;
         private readonly ILogger _logger;
 
 
-        public CasualMeetUpUseCases(ICasualMeetUpEventRepository casualMeetUpEventRepository, ICasualMeetUpEventRepository casualMeetUpEventQueries, ILogger logger)
+        public CasualMeetUpUseCases(
+            ICasualMeetUpEventRepository casualMeetUpEventRepository,
+            ICasualMeetUpEventQuery casualMeetUpEventQuery, 
+            ILogger logger
+            )
         {
             _casualMeetUpEventRepository = casualMeetUpEventRepository;
             _logger = logger;
-            _casualMeetUpEventQueries = casualMeetUpEventQueries;
+            _casualMeetUpEventQuery = casualMeetUpEventQuery;
         }
 
         public async Task<CasualMeetUpEvent> AddEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
@@ -35,14 +39,12 @@ namespace UserLookupService.Domains
 
         public async Task<CasualMeetUpEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await _casualMeetUpEventQueries.GetEventAsync(id, cancellationToken);
+            return await _casualMeetUpEventQuery.GetEventAsync(id, cancellationToken);
         }
 
-        public async Task<CasualMeetUpEvent> UpdateCasualMeetUpEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
+        public async Task UpdateCasualMeetUpEventAsync(CasualMeetUpEvent casualMeetUpEvent, CancellationToken cancellationToken)
         {
-            var updatedEvent = await _casualMeetUpEventRepository.UpdateCasualMeetUpEventAsync(UserModelMapper.ToDatabase(casualMeetUpEvent), cancellationToken);
-
-            return updatedEvent;
+            await _casualMeetUpEventRepository.UpdateCasualMeetUpEventAsync(casualMeetUpEvent, cancellationToken);
         }
     }
 }

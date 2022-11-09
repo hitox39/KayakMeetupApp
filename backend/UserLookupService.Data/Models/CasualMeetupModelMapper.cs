@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
-
-namespace UserLookupService.Data.Models
+﻿namespace UserLookupService.Data.Models
 {
     public static class CasualMeetUpModelMapper
     {
         public static Abstractions.Models.CasualMeetUpEvent ToBusiness(CasualMeetUpEvent casualMeetUpEvent)
-
         {
             return new Abstractions.Models.CasualMeetUpEvent
-
-
             {
                 CityName = casualMeetUpEvent.CityName,
                 State = casualMeetUpEvent.State,
@@ -31,8 +21,6 @@ namespace UserLookupService.Data.Models
         public static CasualMeetUpEvent ToDatabase(Abstractions.Models.CasualMeetUpEvent casualMeetUpEvent)
         {
             return new CasualMeetUpEvent
-
-
             {
                 CityName = casualMeetUpEvent.CityName,
                 State = casualMeetUpEvent.State,

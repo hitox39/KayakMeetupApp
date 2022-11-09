@@ -39,11 +39,10 @@ namespace UserLookupService.Domains
             return await _userQuery.GetUserAsync(id, cancellationToken);
         }
 
-        public async Task<User> UpdateUserAsync(User user, CancellationToken cancellationToken)
+        public async Task UpdateUserAsync(Abstractions.User user, CancellationToken cancellationToken)
         {
-            var updatedUser = await _userRepository.UpdateUserAsync(UserModelMapper.ToDatabase(user), cancellationToken);
+            await _userRepository.UpdateUserAsync(user, cancellationToken);
 
-            return updatedUser;
         }
     }
 }

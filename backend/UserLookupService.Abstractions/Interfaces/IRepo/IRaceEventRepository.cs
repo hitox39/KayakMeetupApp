@@ -1,4 +1,6 @@
-﻿namespace UserLookupService.Abstractions.Interfaces.IRepo
+﻿using UserLookupService.Abstractions.Models;
+
+namespace UserLookupService.Abstractions.Interfaces.IRepo
 {
     public interface IRaceEventRepository 
     {

@@ -42,7 +42,7 @@ public class FishingEventService : IEvent<FishingTournamentEvent>
 
     public async Task UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
     {
-        var updatedEvent = await _fishingTournamentRepository.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
+        await _fishingTournamentRepository.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
 
     }
 }

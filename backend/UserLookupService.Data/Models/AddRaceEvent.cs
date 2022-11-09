@@ -1,6 +1,8 @@
-﻿namespace UserLookupService.Abstractions.Models
+﻿using UserLookupService.Abstractions.Models;
+
+namespace UserLookupService.Data
 {
-    public class RaceEvent : Event
+    public class AddRaceEvent
     {
         public Guid Id { get; set; }
         public string CityName { get; set; }

@@ -54,14 +54,6 @@ public class UserQueries : IUserQuery
         return UserModelMapper.ToBusiness(users);
     }
 
-    public async Task<IList<Abstractions.User>> GetUsersByBoatAsync(Boat boat, CancellationToken cancellationToken)
-    {
-        var user = await _dbContext.Users
-            .Where(u => u.Boat == boat)
-            .SingleAsync(cancellationToken);
-
-        return UserModelMapper.ToBusiness(user);
-    }
 }
 
 

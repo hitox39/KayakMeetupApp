@@ -4,7 +4,7 @@ using UserLookupService.Abstractions;
 using UserLookupService.Data;
 using UserLookupService.Data.Models;
 using User = UserLookupService.Abstractions.User;
-using UserLookupService.Domains.UserUseCases;
+using AddUser = UserLookupService.Data.AddUser;
 
 namespace UserLookupService.Controllers;
 
@@ -54,12 +54,12 @@ public class UserController : ControllerBase
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateUser([FromBody] Data.Models.User user, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateUser([FromBody] AddUser user, CancellationToken cancellationToken)
     {
         
         var updateUserUseCase = _serviceProvider.GetRequiredService<UserUseCases>();
 
-        var updatedUser = await updateUserUseCase.UpdateUserAsync(user, cancellationToken);
+        await updateUserUseCase.UpdateUserAsync(UserModelMapper.ToBusiness(user), cancellationToken);
 
         return Ok();
     }
