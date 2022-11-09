@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UserLookupService.Abstractions;
 using UserLookupService.Data.Models;
@@ -11,10 +11,10 @@ namespace UserLookupService.Controllers
     public class FishingEventController : ControllerBase
     {
 
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<FishingEventController> _logger;
         private readonly IServiceProvider _serviceProvider;
 
-        public FishingEventController(ILogger<UserController> logger, IServiceProvider serviceProvider)
+        public FishingEventController(ILogger<FishingEventController> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;

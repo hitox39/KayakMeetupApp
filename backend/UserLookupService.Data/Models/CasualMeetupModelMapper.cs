@@ -17,6 +17,20 @@
             };
         }
 
+        public static Abstractions.Models.CasualMeetUpEvent ToBusiness(AddCasualMeetUpEvent casualMeetUpEvent)
+        {
+            return new Abstractions.Models.CasualMeetUpEvent
+            {
+                CityName = casualMeetUpEvent.CityName,
+                State = casualMeetUpEvent.State,
+                Country = casualMeetUpEvent.Country,
+                Id = casualMeetUpEvent.Id,
+                Latitude = casualMeetUpEvent.Latitude,
+                Longitude = casualMeetUpEvent.Longitude,
+                ZipCode = casualMeetUpEvent.ZipCode,
+
+            };
+        }
 
         public static CasualMeetUpEvent ToDatabase(Abstractions.Models.CasualMeetUpEvent casualMeetUpEvent)
         {
@@ -31,6 +45,7 @@
                 ZipCode = casualMeetUpEvent.ZipCode,
             };
         }
+
 
 
         public static IList<Abstractions.Models.CasualMeetUpEvent> ToBusiness(List<CasualMeetUpEvent> casualMeetUpEvents)
