@@ -1,4 +1,4 @@
-﻿namespace UserLookupService.Abstractions.Models
+﻿namespace KayakMeetUpService.Abstractions.Models
 {
     public class CasualMeetUpEvent : Event
     {

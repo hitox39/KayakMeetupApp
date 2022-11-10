@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Data.Models;
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Models;
+using KayakMeetUpService.Data.Models;
 
 
-namespace UserLookupService.Data.Query;
+namespace KayakMeetUpService.Data.Query;
 
     public class RaceEventQueries : IRaceEventQuery
     {
@@ -14,7 +14,7 @@ namespace UserLookupService.Data.Query;
         {
             _dbContext = dbContext;
         }
-        public async Task<IList<Abstractions.RaceEvent>> GetAllEventsAsync(CancellationToken cancellationToken)
+        public async Task<IList<Abstractions.Models.RaceEvent>> GetAllEventsAsync(CancellationToken cancellationToken)
         {
             var raceEvent = await _dbContext.RaceEvents
                 .ToListAsync(cancellationToken);
@@ -22,7 +22,7 @@ namespace UserLookupService.Data.Query;
             return RaceEventModelMapper.ToBusiness(raceEvent);
         }
 
-    public async Task<Abstractions.RaceEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<Abstractions.Models.RaceEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
      {
             var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.Id == id)
@@ -31,7 +31,7 @@ namespace UserLookupService.Data.Query;
             return RaceEventModelMapper.ToBusiness(raceEvent);
         }
 
-    public async Task<IList<Abstractions.RaceEvent>> GetEventByCityNameAsync(string CityName, CancellationToken cancellationToken)
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByCityNameAsync(string CityName, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.CityName == CityName)
@@ -40,7 +40,7 @@ namespace UserLookupService.Data.Query;
         return RaceEventModelMapper.ToBusiness(raceEvent);
     }
 
-    public async Task<IList<Abstractions.RaceEvent>> GetEventByCountry(string Country, CancellationToken cancellationToken)
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByCountry(string Country, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
                  .Where(x => x.Country == Country)
@@ -49,7 +49,7 @@ namespace UserLookupService.Data.Query;
         return RaceEventModelMapper.ToBusiness(raceEvent);
     }
 
-    public async Task<IList<Abstractions.RaceEvent>> GetEventByStateAsync(State state, CancellationToken cancellationToken)
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByStateAsync(State state, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.State == state)
@@ -58,7 +58,7 @@ namespace UserLookupService.Data.Query;
         return RaceEventModelMapper.ToBusiness(raceEvent);
     }
 
-    public async Task<IList<Abstractions.RaceEvent>> GetEventByZipCodeAsync(int ZipCode, CancellationToken cancellationToken)
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByZipCodeAsync(int ZipCode, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.ZipCode == ZipCode)

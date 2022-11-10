@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetUpService.Abstractions.Models;
 
-namespace UserLookupService.Data.Models;
+namespace KayakMeetUpService.Data.Models;
 
 public class User
 {

@@ -1,6 +1,6 @@
-using UserLookupService.Abstractions;
+using KayakMeetUpService.Abstractions;
 
-namespace UserLookupService.Abstractions.Interfaces.IRepo;
+namespace KayakMeetUpService.Abstractions.Interfaces.IRepo;
 
 public interface IUserRepository
 {

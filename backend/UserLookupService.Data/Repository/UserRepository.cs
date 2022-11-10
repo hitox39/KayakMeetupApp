@@ -1,8 +1,8 @@
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
 
 
-namespace UserLookupService.Data;
+namespace KayakMeetUpService.Data;
 
 public class UserRepository : IUserRepository
 {

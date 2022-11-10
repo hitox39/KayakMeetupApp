@@ -1,8 +1,8 @@
-﻿using KayakMeetUpService.Abstractions.Interfaces;
+﻿using KayakMeetUpService.Abstractions.Models;
 
-namespace KayakMeetUpService.Abstractions.Models
+namespace KayakMeetUpService.Data
 {
-    public class Event 
+    public class AddRaceEvent
     {
         public Guid Id { get; set; }
         public string CityName { get; set; }
@@ -12,5 +12,6 @@ namespace KayakMeetUpService.Abstractions.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string Country { get; set; }
+        public int PrizePool { get; set; }
     }
 }

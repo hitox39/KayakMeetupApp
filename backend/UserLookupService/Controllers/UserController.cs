@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using UserLookupService.Domains;
-using UserLookupService.Abstractions;
-using UserLookupService.Data;
+using KayakMeetUpService.Domains;
+using KayakMeetUpService.Abstractions;
+using KayakMeetUpService.Data;
+using KayakMeetUpService.Data.Models;
+using User = KayakMeetUpService.Abstractions.User;
+using AddUser = KayakMeetUpService.Data.AddUser;
 
-namespace UserLookupService.Controllers;
+namespace KayakMeetUpService.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -22,7 +25,7 @@ public class UserController : ControllerBase
     [HttpGet("{id:Guid}")]
     public async Task<IActionResult> GetUserById([FromRoute] Guid id, CancellationToken cancellationToken)
     {
-        var getUserUseCase = _serviceProvider.GetRequiredService<GetUserUseCase>();
+        var getUserUseCase = _serviceProvider.GetRequiredService<UserUseCases>();
 
         var user = await getUserUseCase.GetUserAsync(id, cancellationToken);
         
@@ -32,7 +35,7 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddUser([FromBody] AddUser user, CancellationToken cancellationToken)
     {
-        var addUserUseCase = _serviceProvider.GetRequiredService<AddUserUseCase>();
+        var addUserUseCase = _serviceProvider.GetRequiredService<UserUseCases>();
 
         var createdUser = await addUserUseCase.AddUserAsync(UserModelMapper.ToBusiness(user), cancellationToken);
 
@@ -42,7 +45,7 @@ public class UserController : ControllerBase
     [HttpDelete]
     public async Task<IActionResult> DeleteUserAsync([FromRoute] Guid id, CancellationToken cancellationToken = default)
     {
-        var deleteUserUseCase = _serviceProvider.GetRequiredService<DeleteUserUseCase>();
+        var deleteUserUseCase = _serviceProvider.GetRequiredService<UserUseCases>();
 
         await deleteUserUseCase.DeleteUserAsync(id, cancellationToken);
 
@@ -51,12 +54,12 @@ public class UserController : ControllerBase
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateUser([FromBody] User user, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateUser([FromBody] AddUser user, CancellationToken cancellationToken)
     {
         
-        var updateUserUseCase = _serviceProvider.GetRequiredService<UpdateUserUseCase>();
+        var updateUserUseCase = _serviceProvider.GetRequiredService<UserUseCases>();
 
-        var updatedUser = await updateUserUseCase.UpdateUserAsync(user, cancellationToken);
+        await updateUserUseCase.UpdateUserAsync(UserModelMapper.ToBusiness(user), cancellationToken);
 
         return Ok();
     }

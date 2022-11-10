@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetUpService.Data.Models
 {
     public class Boat
     {

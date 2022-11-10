@@ -1,10 +1,25 @@
-﻿using UserLookupService.Abstractions;
+﻿using KayakMeetUpService.Abstractions;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetUpService.Data.Models
 {
     public class FishingTournamentModelMapper
     {
 
+        public static Abstractions.Models.FishingTournamentEvent ToBusiness(AddFishingTournamentEvent fishingTournamentEvent)
+        {
+            return new Abstractions.Models.FishingTournamentEvent
+
+            {
+                CityName = fishingTournamentEvent.CityName,
+                State = fishingTournamentEvent.State,
+                Country = fishingTournamentEvent.Country,
+                Id = fishingTournamentEvent.Id,
+                Latitude = fishingTournamentEvent.Latitude,
+                Longitude = fishingTournamentEvent.Longitude,
+                PrizePool = fishingTournamentEvent.PrizePool,
+                ZipCode = fishingTournamentEvent.ZipCode,
+            };
+        }
         public static Abstractions.Models.FishingTournamentEvent ToBusiness(FishingTournamentEvent fishingTournamentEvent)
         {
             return new Abstractions.Models.FishingTournamentEvent

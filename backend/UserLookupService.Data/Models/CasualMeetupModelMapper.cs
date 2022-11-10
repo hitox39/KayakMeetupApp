@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
-
-namespace UserLookupService.Data.Models
+﻿namespace KayakMeetUpService.Data.Models
 {
     public static class CasualMeetUpModelMapper
     {
         public static Abstractions.Models.CasualMeetUpEvent ToBusiness(CasualMeetUpEvent casualMeetUpEvent)
-
         {
             return new Abstractions.Models.CasualMeetUpEvent
-
-
             {
                 CityName = casualMeetUpEvent.CityName,
                 State = casualMeetUpEvent.State,
@@ -27,12 +17,24 @@ namespace UserLookupService.Data.Models
             };
         }
 
+        public static Abstractions.Models.CasualMeetUpEvent ToBusiness(Abstractions.AddCasualMeetUpEvent casualMeetUpEvent)
+        {
+            return new Abstractions.Models.CasualMeetUpEvent
+            {
+                CityName = casualMeetUpEvent.CityName,
+                State = casualMeetUpEvent.State,
+                Country = casualMeetUpEvent.Country,
+                Id = casualMeetUpEvent.Id,
+                Latitude = casualMeetUpEvent.Latitude,
+                Longitude = casualMeetUpEvent.Longitude,
+                ZipCode = casualMeetUpEvent.ZipCode,
+
+            };
+        }
 
         public static CasualMeetUpEvent ToDatabase(Abstractions.Models.CasualMeetUpEvent casualMeetUpEvent)
         {
             return new CasualMeetUpEvent
-
-
             {
                 CityName = casualMeetUpEvent.CityName,
                 State = casualMeetUpEvent.State,
@@ -43,6 +45,7 @@ namespace UserLookupService.Data.Models
                 ZipCode = casualMeetUpEvent.ZipCode,
             };
         }
+
 
 
         public static IList<Abstractions.Models.CasualMeetUpEvent> ToBusiness(List<CasualMeetUpEvent> casualMeetUpEvents)
@@ -56,5 +59,7 @@ namespace UserLookupService.Data.Models
 
             return abstractionCasualMeetUpEvents;
         }
+
+        
     }
 }
