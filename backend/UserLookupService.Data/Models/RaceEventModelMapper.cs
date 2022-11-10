@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions;
+﻿using KayakMeetUpService.Abstractions;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetUpService.Data.Models
 {
     public class RaceEventModelMapper
     {
@@ -23,7 +23,7 @@ namespace UserLookupService.Data.Models
             };
         }
 
-        public static Abstractions.Models.RaceEvent ToBusiness(AddRaceEvent raceEvent)
+        public static Abstractions.Models.RaceEvent ToBusiness(Abstractions.AddRaceEvent raceEvent)
         {
             return new Abstractions.Models.RaceEvent
             {

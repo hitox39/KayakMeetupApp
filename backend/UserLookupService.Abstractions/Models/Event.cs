@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Interfaces;
+﻿using KayakMeetUpService.Abstractions.Interfaces;
 
-namespace UserLookupService.Abstractions.Models
+namespace KayakMeetUpService.Abstractions.Models
 {
     public class Event 
     {

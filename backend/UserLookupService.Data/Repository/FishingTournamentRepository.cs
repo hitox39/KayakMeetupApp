@@ -1,9 +1,9 @@
-﻿using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Abstractions.Interfaces.IQuery;
+﻿using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
+using KayakMeetUpService.Abstractions.Models;
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 
-namespace UserLookupService.Data.Repository
+namespace KayakMeetUpService.Data.Repository
 {
     public class FishingTournamentRepository : IFishingTournamentRepository
     {

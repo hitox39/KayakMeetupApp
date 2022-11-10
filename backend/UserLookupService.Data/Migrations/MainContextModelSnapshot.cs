@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UserLookupService.Data;
+using KayakMeetUpService.Data;
 
 #nullable disable
 
-namespace UserLookupService.Data.Migrations
+namespace KayakMeetUpService.Data.Migrations
 {
     [DbContext(typeof(MainContext))]
     partial class MainContextModelSnapshot : ModelSnapshot

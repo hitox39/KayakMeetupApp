@@ -1,11 +1,11 @@
-using UserLookupService.Domains;
+using KayakMeetUpService.Domains;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
-using UserLookupService.Data;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Query;
-using UserLookupService.Data.Repository;
+using KayakMeetUpService.Data;
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Query;
+using KayakMeetUpService.Data.Repository;
 
 var cors = "test";
 
@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<MainContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("User"),
-        b => b.MigrationsAssembly("UserLookupService.Data")));
+        b => b.MigrationsAssembly("KayakMeetUpService.Data")));
 
 
 builder.Services.AddControllers().AddJsonOptions(o =>

@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using UserLookupService.Domains;
-using UserLookupService.Abstractions;
-using UserLookupService.Data;
-using UserLookupService.Data.Models;
-using User = UserLookupService.Abstractions.User;
-using AddUser = UserLookupService.Data.AddUser;
+using KayakMeetUpService.Domains;
+using KayakMeetUpService.Abstractions;
+using KayakMeetUpService.Data;
+using KayakMeetUpService.Data.Models;
+using User = KayakMeetUpService.Abstractions.User;
+using AddUser = KayakMeetUpService.Data.AddUser;
 
-namespace UserLookupService.Controllers;
+namespace KayakMeetUpService.Controllers;
 
 [ApiController]
 [Route("[controller]")]

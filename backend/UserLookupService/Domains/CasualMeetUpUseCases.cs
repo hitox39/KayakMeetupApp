@@ -1,9 +1,9 @@
-﻿using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
+﻿using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
+using CasualMeetUpEvent = KayakMeetUpService.Abstractions.Models.CasualMeetUpEvent;
 
-namespace UserLookupService.Domains
+namespace KayakMeetUpService.Domains
 {
     public class CasualMeetUpUseCases
     {

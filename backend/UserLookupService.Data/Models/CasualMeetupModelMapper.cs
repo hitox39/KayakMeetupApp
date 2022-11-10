@@ -1,4 +1,4 @@
-﻿namespace UserLookupService.Data.Models
+﻿namespace KayakMeetUpService.Data.Models
 {
     public static class CasualMeetUpModelMapper
     {
@@ -17,7 +17,7 @@
             };
         }
 
-        public static Abstractions.Models.CasualMeetUpEvent ToBusiness(AddCasualMeetUpEvent casualMeetUpEvent)
+        public static Abstractions.Models.CasualMeetUpEvent ToBusiness(Abstractions.AddCasualMeetUpEvent casualMeetUpEvent)
         {
             return new Abstractions.Models.CasualMeetUpEvent
             {
@@ -59,5 +59,7 @@
 
             return abstractionCasualMeetUpEvents;
         }
+
+        
     }
 }

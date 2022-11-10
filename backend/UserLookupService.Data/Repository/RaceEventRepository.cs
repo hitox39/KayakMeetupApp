@@ -1,9 +1,9 @@
-﻿using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using UserLookupService.Data.Query;
+﻿using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
+using KayakMeetUpService.Data.Query;
 
 
-namespace UserLookupService.Data.Repository
+namespace KayakMeetUpService.Data.Repository
 {
     public class RaceEventRepository : IRaceEventRepository
     {

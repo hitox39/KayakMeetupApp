@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetUpService.Abstractions.Models;
 
-namespace UserLookupService.Abstractions.Interfaces.IRepo
+namespace KayakMeetUpService.Abstractions.Interfaces.IRepo
 {
     public interface IFishingTournamentRepository 
     {

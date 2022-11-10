@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions;
+﻿using KayakMeetUpService.Abstractions;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetUpService.Data.Models
 {
     public class FishingTournamentModelMapper
     {

@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Data.Models;
-using FishingTournamentEvent = UserLookupService.Data.Models.FishingTournamentEvent;
-using RaceEvent = UserLookupService.Data.Models.RaceEvent;
-using User = UserLookupService.Data.Models.User;
-using CasualMeetUpEvent = UserLookupService.Data.Models.CasualMeetUpEvent;
+using KayakMeetUpService.Abstractions.Models;
+using KayakMeetUpService.Data.Models;
+using FishingTournamentEvent = KayakMeetUpService.Data.Models.FishingTournamentEvent;
+using RaceEvent = KayakMeetUpService.Data.Models.RaceEvent;
+using User = KayakMeetUpService.Data.Models.User;
+using CasualMeetUpEvent = KayakMeetUpService.Data.Models.CasualMeetUpEvent;
 
-namespace UserLookupService.Data;
+namespace KayakMeetUpService.Data;
 
 public class MainContext : DbContext
 {

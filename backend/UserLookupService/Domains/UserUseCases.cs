@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
 
-namespace UserLookupService.Domains
+namespace KayakMeetUpService.Domains
 {
     public class UserUseCases
     {

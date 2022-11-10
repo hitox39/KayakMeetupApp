@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using UserLookupService.Data.Query;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Data.Models;
+using KayakMeetUpService.Data.Query;
 //using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
 
-namespace UserLookupService.Data.Repository
+namespace KayakMeetUpService.Data.Repository
 {
     public class CasualMeetupRepository : ICasualMeetUpEventRepository
 

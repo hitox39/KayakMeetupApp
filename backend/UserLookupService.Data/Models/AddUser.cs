@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetUpService.Abstractions.Models;
 
-namespace UserLookupService.Data;
+namespace KayakMeetUpService.Data;
 
 public class AddUser
 {

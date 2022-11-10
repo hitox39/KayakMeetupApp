@@ -1,4 +1,4 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetUpService.Abstractions.Models;
 
 namespace UserlookupService.Data.Models;
 

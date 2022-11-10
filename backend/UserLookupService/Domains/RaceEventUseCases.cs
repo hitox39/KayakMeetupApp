@@ -1,8 +1,8 @@
-﻿using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Abstractions.Models;
+﻿using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+using KayakMeetUpService.Abstractions.Models;
 
-namespace UserLookupService.Domains
+namespace KayakMeetUpService.Domains
 {
     public class RaceEventUseCases
     {

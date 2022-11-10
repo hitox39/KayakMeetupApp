@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using UserLookupService.Abstractions;
-using UserLookupService.Data.Models;
-using UserLookupService.Domains;
+using KayakMeetUpService.Abstractions;
+using KayakMeetUpService.Data.Models;
+using KayakMeetUpService.Domains;
 
-namespace UserLookupService.Controllers
+namespace KayakMeetUpService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
