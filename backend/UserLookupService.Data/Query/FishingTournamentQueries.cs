@@ -14,7 +14,7 @@ using FishingTournamentEvent = UserLookupService.Abstractions.Models.FishingTour
 
 namespace UserLookupService.Data.Query
 {
-    internal class FishingTournamentQueries : IFishingTournamentQueries
+    public class FishingTournamentQueries : IFishingTournamentQueries
     {
         private readonly MainContext _dbContext;
 

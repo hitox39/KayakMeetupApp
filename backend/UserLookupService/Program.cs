@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using UserLookupService.Data;
 using UserLookupService.Abstractions.Interfaces.IQuery;
 using UserLookupService.Abstractions.Interfaces.IRepo;
+using UserLookupService.Data.Query;
+using UserLookupService.Data.Repository;
 
 var cors = "test";
 
@@ -33,12 +35,26 @@ builder.Services.AddControllers().AddJsonOptions(o =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<CasualMeetUpUseCases>();
+builder.Services.AddScoped<FishingTournamentEventUseCases>();
+builder.Services.AddScoped<RaceEventUseCases>();
+builder.Services.AddScoped<UserUseCases>();
+
+builder.Services.AddScoped<ICasualMeetUpEventQuery, CasualMeetUpQueries>();
+builder.Services.AddScoped<ICasualMeetUpEventRepository, CasualMeetupRepository>();
+
+builder.Services.AddScoped<IFishingTournamentQueries, FishingTournamentQueries>();
+builder.Services.AddScoped<IFishingTournamentRepository, FishingTournamentRepository>();
+
+builder.Services.AddScoped<IRaceEventQuery, RaceEventQueries>();
+builder.Services.AddScoped<IRaceEventRepository, RaceEventRepository>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserQuery, UserQueries>();
-builder.Services.AddScoped<GetUserUseCase>();
-builder.Services.AddScoped<AddUserUseCase>();
-builder.Services.AddScoped<DeleteUserUseCase>();
-builder.Services.AddScoped<UpdateUserUseCase>();
+
+
+
 
 var app = builder.Build();
 
