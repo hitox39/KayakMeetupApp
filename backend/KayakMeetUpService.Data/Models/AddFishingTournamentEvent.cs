@@ -5,6 +5,7 @@ namespace UserlookupService.Data.Models;
 public class AddFishingTournamentEvent
 {
     public Guid Id { get; set; }
+    public string EventName { get; set; }
     public string CityName { get; set; }
     public State State { get; set; }
     public int Zip { get; set; }

@@ -10,13 +10,13 @@ namespace KayakMeetUpService.Domains
     {
         private readonly IFishingTournamentRepository _fishingTournamentRepository;
         private readonly IFishingTournamentQueries _fishingTournamentQueries;
-        private readonly ILogger _logger;
+        private readonly ILogger<FishingTournamentEventUseCases> _logger;
 
 
         public FishingTournamentEventUseCases(
             IFishingTournamentRepository fishingTournamentRepository, 
             IFishingTournamentQueries fishingTournamentQueries, 
-            ILogger logger
+            ILogger<FishingTournamentEventUseCases> logger
             )
         {
             _fishingTournamentRepository = fishingTournamentRepository;

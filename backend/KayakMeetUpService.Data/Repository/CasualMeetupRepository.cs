@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using KayakMeetUpService.Abstractions.Interfaces.IRepo;
 using KayakMeetUpService.Data.Models;
 using KayakMeetUpService.Data.Query;
-//using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
 
 namespace KayakMeetUpService.Data.Repository
 {
@@ -14,9 +14,9 @@ namespace KayakMeetUpService.Data.Repository
 
     {
         private readonly MainContext _dbContext;
-        private readonly CasualMeetUpQueries _casualMeetUpQueries;
+        private readonly ICasualMeetUpEventQuery _casualMeetUpQueries;
 
-        public CasualMeetupRepository(MainContext dbContext, CasualMeetUpQueries casualMeetUpQueries)
+        public CasualMeetupRepository(MainContext dbContext, ICasualMeetUpEventQuery casualMeetUpQueries)
         {
             _dbContext = dbContext;
             _casualMeetUpQueries = casualMeetUpQueries;

@@ -4,7 +4,7 @@ namespace KayakMeetUpService.Abstractions.Interfaces.IQuery
 {
     public interface ICasualMeetUpEventQuery 
     {
-        Task<CasualMeetUpEvent> GetEventAsync(Guid id, CancellationToken cancellationToken);
+        Task<CasualMeetUpEvent?> GetEventAsync(Guid id, CancellationToken cancellationToken);
         Task<IList<CasualMeetUpEvent>> GetAllEventsAsync(CancellationToken cancellationToken);
         Task<IList<CasualMeetUpEvent>> GetEventsByStateAsync(State state, CancellationToken cancellationToken);
         Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(int ZipCode, CancellationToken cancellationToken);

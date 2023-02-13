@@ -1,4 +1,5 @@
-﻿using KayakMeetUpService.Abstractions.Interfaces.IRepo;
+﻿using KayakMeetUpService.Abstractions.Interfaces.IQuery;
+using KayakMeetUpService.Abstractions.Interfaces.IRepo;
 using KayakMeetUpService.Data.Models;
 using KayakMeetUpService.Data.Query;
 
@@ -8,9 +9,9 @@ namespace KayakMeetUpService.Data.Repository
     public class RaceEventRepository : IRaceEventRepository
     {
         private readonly MainContext _dbContext;
-        private readonly RaceEventQueries _raceEventQueries;
+        private readonly IRaceEventQuery _raceEventQueries;
 
-        public RaceEventRepository(MainContext dbContext, RaceEventQueries raceEventQueries)
+        public RaceEventRepository(MainContext dbContext, IRaceEventQuery raceEventQueries)
         {
             _dbContext = dbContext;
             _raceEventQueries = raceEventQueries;

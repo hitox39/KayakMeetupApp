@@ -9,10 +9,10 @@ namespace KayakMeetUpService.Domains
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserQuery _userQuery;
-        private readonly ILogger _logger;
+        private readonly ILogger<UserUseCases> _logger;
 
 
-        public UserUseCases(IUserRepository userRepository, IUserQuery userQuery, ILogger logger)
+        public UserUseCases(IUserRepository userRepository, IUserQuery userQuery, ILogger<UserUseCases> logger)
         {
             _userRepository = userRepository;
             _logger = logger;

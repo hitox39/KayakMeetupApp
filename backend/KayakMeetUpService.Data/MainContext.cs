@@ -110,9 +110,6 @@ public class MainContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<User>().Property(u => u.DateOfBirth)
             .IsRequired();
-        modelBuilder.Entity<User>().Property(u => u.Boat)
-            .IsRequired();
-
     }
 
     private static void CasualMeetUpEventTable(ModelBuilder modelBuilder)

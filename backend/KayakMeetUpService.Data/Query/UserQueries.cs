@@ -2,14 +2,13 @@
 using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using KayakMeetUpService.Data.Models;
 using State = KayakMeetUpService.Abstractions.Models.State;
-using Boat = KayakMeetUpService.Abstractions.Models.Boat;
 
 namespace KayakMeetUpService.Data;
 
-public class UserQueries : IUserQuery
+public class UserQuery : IUserQuery
 {
     private readonly MainContext _dbContext;
-    public UserQueries(MainContext dbContext)
+    public UserQuery(MainContext dbContext)
     {
         _dbContext = dbContext;
     }
