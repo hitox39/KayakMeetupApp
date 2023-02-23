@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,8 +46,6 @@ namespace KayakMeetUpService.Data.Repository
             CasualMeetUpdate.CityName = casualMeetUpEvent.CityName;
             CasualMeetUpdate.ZipCode = casualMeetUpEvent.ZipCode;
             CasualMeetUpdate.Address = casualMeetUpEvent.Address;
-            CasualMeetUpdate.Longitude = casualMeetUpEvent.Longitude;
-            CasualMeetUpdate.Latitude = casualMeetUpEvent.Latitude;
             CasualMeetUpdate.Country = casualMeetUpEvent.Country;
 
             await _dbContext.SaveChangesAsync(cancellationToken);

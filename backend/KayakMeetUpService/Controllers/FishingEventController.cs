@@ -21,7 +21,7 @@ namespace KayakMeetUpService.Controllers
         }
 
         [HttpGet("{id:Guid}")]
-        public async Task<IActionResult> GetEventById([FromRoute] Guid id, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetEventById([FromRoute] Guid id, CancellationToken cancellationToken)
         {
             var getEventUseCase = _serviceProvider.GetRequiredService<FishingTournamentEventUseCases>();
 

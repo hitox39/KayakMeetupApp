@@ -39,8 +39,6 @@ namespace KayakMeetUpService.Data.Repository
             RaceEventUpdate.CityName = raceEvent.CityName;
             RaceEventUpdate.ZipCode = raceEvent.ZipCode;
             RaceEventUpdate.Address = raceEvent.Address;
-            RaceEventUpdate.Longitude = raceEvent.Longitude;
-            RaceEventUpdate.Latitude = raceEvent.Latitude;
             RaceEventUpdate.Country = raceEvent.Country;
 
             await _dbContext.SaveChangesAsync(cancellationToken);

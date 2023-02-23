@@ -10,10 +10,9 @@
                 State = casualMeetUpEvent.State,
                 Country = casualMeetUpEvent.Country,
                 Id = casualMeetUpEvent.Id,
-                Latitude = casualMeetUpEvent.Latitude,
-                Longitude = casualMeetUpEvent.Longitude,
                 ZipCode = casualMeetUpEvent.ZipCode,
-
+                EventName= casualMeetUpEvent.EventName,
+                Address = casualMeetUpEvent.Address
             };
         }
 
@@ -25,9 +24,10 @@
                 State = casualMeetUpEvent.State,
                 Country = casualMeetUpEvent.Country,
                 Id = casualMeetUpEvent.Id,
-                Latitude = casualMeetUpEvent.Latitude,
-                Longitude = casualMeetUpEvent.Longitude,
-                ZipCode = casualMeetUpEvent.ZipCode,
+                Address = casualMeetUpEvent.Address,
+                EventName= casualMeetUpEvent.EventName,
+                ZipCode= casualMeetUpEvent.Zip  
+                
 
             };
         }
@@ -40,9 +40,8 @@
                 State = casualMeetUpEvent.State,
                 Country = casualMeetUpEvent.Country,
                 Id = casualMeetUpEvent.Id,
-                Latitude = casualMeetUpEvent.Latitude,
-                Longitude = casualMeetUpEvent.Longitude,
                 ZipCode = casualMeetUpEvent.ZipCode,
+                Address = casualMeetUpEvent.Address,
             };
         }
 

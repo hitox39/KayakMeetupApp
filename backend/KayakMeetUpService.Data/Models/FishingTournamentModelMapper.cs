@@ -10,12 +10,12 @@ namespace KayakMeetUpService.Data.Models
             return new Abstractions.Models.FishingTournamentEvent
 
             {
+                EventName = fishingTournamentEvent.EventName,
+                Address = fishingTournamentEvent.Address,
                 CityName = fishingTournamentEvent.CityName,
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                Latitude = fishingTournamentEvent.Latitude,
-                Longitude = fishingTournamentEvent.Longitude,
                 PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };
@@ -24,13 +24,13 @@ namespace KayakMeetUpService.Data.Models
         {
             return new Abstractions.Models.FishingTournamentEvent
 
-            {
+            {   
+                EventName = fishingTournamentEvent.EventName,
+                Address = fishingTournamentEvent.Address,
                 CityName = fishingTournamentEvent.CityName,
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                Latitude = fishingTournamentEvent.Latitude,
-                Longitude = fishingTournamentEvent.Longitude,
                 PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };
@@ -41,12 +41,12 @@ namespace KayakMeetUpService.Data.Models
             return new FishingTournamentEvent
 
             {
+                EventName = fishingTournamentEvent.EventName,
+                Address = fishingTournamentEvent.Address,
                 CityName = fishingTournamentEvent.CityName,
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                Latitude = fishingTournamentEvent.Latitude,
-                Longitude = fishingTournamentEvent.Longitude,
                 PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };

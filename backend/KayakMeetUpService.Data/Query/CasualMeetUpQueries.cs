@@ -64,7 +64,7 @@ public class CasualMeetUpQueries : ICasualMeetUpEventQuery
         return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
 
-    public async Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(int zipCode, CancellationToken cancellationToken)
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(string zipCode, CancellationToken cancellationToken)
     {
         var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
             .Where(x => x.ZipCode == zipCode)

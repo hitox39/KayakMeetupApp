@@ -15,35 +15,51 @@ async function addCasualEvents(id: CasualEvent) {
 
 export default function AddCasualForm() {
     return (
-        <div className="border-solid rounded-lg border-4 border-black overflow-auto bg-slate-500 w-3">
+        <div className="border-solid rounded-lg border-4 w-full border-black overflow-auto bg-slate-500 ">
             <form action="" method="post" className="Add Casual Event">
-                <div className="racename">
-                    <label htmlFor="RaceName">Race Name Name: </label>
-                    <input type="text" name="RaceName" id="racename" required />
+            <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
+                  <div className='flex flex-col'>
+                    <label className='uppercase text-md py-2'>Race Name</label>
+                    <input
+                      className='border-2 rounded-lg p-3 flex border-gray-300'
+                      type='text'
+                      name='name'
+                    />
+                  </div>
+                  <div className='flex flex-col'>
+                    <label className='uppercase text-md py-2'>City Name</label>
+                    <input
+                      className='border-2 rounded-lg p-3 flex border-gray-300'
+                      type='text'
+                      name='cityname'
+                    />
+                  </div>
                 </div>
-                <div className="cityname">
-                    <label htmlFor="cityname">City Name: </label>
-                    <input type="text" name="cityName" id="cityname" required />
+                <div className='flex flex-col py-2'>
+                  <label className='uppercase text-md py-2'>Zip Code</label>
+                  <input
+                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    type='text'
+                    name='zipcode'
+                  />
                 </div>
-                <div className="state">
-                    <label htmlFor="name">State: </label>
-                    <input type="text" name="name" id="name" required />
+                <div className='flex flex-col py-2'>
+                  <label className='uppercase text-md py-2'>Address</label>
+                  <input
+                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    type='text'
+                    name='address'
+                  />
                 </div>
-                <div className="zipcode">
-                    <label htmlFor="email">Zip Code: </label>
-                    <input type="text" name="email" id="email" required />
+                <div className='flex flex-col py-2'>
+                  <label className='uppercase text-md py-2'>Country</label>
+                  <input
+                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    type='text'
+                    name='country'
+                    />
                 </div>
-                <div className="address">
-                    <label htmlFor="address">Address: </label>
-                    <input type="text" name="name" id="name" required />
-                </div>
-                <div className="country">
-                    <label htmlFor="country">Country: </label>
-                    <input type="text" name="country" id="country" required />
-                </div>
-                <div className="submit">
-                    <input type="submit" value="Submit!" />
-                </div>
+                <button className='bg-blue-400 w-[200px] rounded-md text-xl my-4 mx-auto py-3 text-black'>Submit Event</button>
             </form>
         </div>
     )

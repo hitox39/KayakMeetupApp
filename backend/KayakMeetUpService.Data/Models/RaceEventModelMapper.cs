@@ -15,8 +15,6 @@ namespace KayakMeetUpService.Data.Models
                 Country = raceEvent.Country,
                 Address = raceEvent.Address,
                 Id = raceEvent.Id,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
                 PrizePool = raceEvent.PrizePool,
                 ZipCode = raceEvent.ZipCode,
 
@@ -30,10 +28,8 @@ namespace KayakMeetUpService.Data.Models
                 CityName = raceEvent.CityName,
                 State = raceEvent.State,
                 Country = raceEvent.Country,
-                Id = Guid.NewGuid(),
+                Id = raceEvent.Id,
                 Address = raceEvent.Address,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
                 PrizePool = raceEvent.PrizePool,
                 ZipCode = raceEvent.ZipCode,
             };
@@ -48,8 +44,6 @@ namespace KayakMeetUpService.Data.Models
                 Country = raceEvent.Country,
                 Id = raceEvent.Id,
                 Address = raceEvent.Address,
-                Latitude = raceEvent.Latitude,
-                Longitude = raceEvent.Longitude,
                 PrizePool = raceEvent.PrizePool,
                 ZipCode = raceEvent.ZipCode,
             };

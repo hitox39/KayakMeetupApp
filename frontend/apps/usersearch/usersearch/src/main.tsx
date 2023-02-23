@@ -9,12 +9,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from './Components/Layout';
-import Dashboard from './Components/Dashboard';
+import Hero from './Components/Hero';
 import AddCasualEvent from './Components/Groups/AddEvent/AddCasualForm';
 import AddEvents from './Components/Groups/AddEvent/AddEvents';
 import RaceEvents from './Components/Groups/Events/RaceEvents';
 import FishingEvents from './Components/Groups/Events/FishingEvents';
 import CasualEvents from './Components/Groups/Events/CasualEvents';
+import './index.css'
 
 
 
@@ -24,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Route index element={<App />} />
       <Route 
         path={'/'}
-        element={<Layout component={<Dashboard />}/>}
+        element={<Layout component={<Hero />}/>}
        /> 
        <Route 
         path={'/addEvents'}

@@ -2,6 +2,7 @@
 using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using KayakMeetUpService.Abstractions.Models;
 using KayakMeetUpService.Data.Models;
+using System.Diagnostics.Metrics;
 
 
 namespace KayakMeetUpService.Data.Query;
@@ -22,14 +23,28 @@ namespace KayakMeetUpService.Data.Query;
             return RaceEventModelMapper.ToBusiness(raceEvent);
         }
 
-    public async Task<Abstractions.Models.RaceEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<Abstractions.Models.RaceEvent?> GetEventAsync(Guid id, CancellationToken cancellationToken)
      {
             var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.Id == id)
-            .SingleAsync(cancellationToken);
+            .SingleOrDefaultAsync(cancellationToken);
 
-            return RaceEventModelMapper.ToBusiness(raceEvent);
+        if (raceEvent == null)
+        {
+            return null;
         }
+
+        return RaceEventModelMapper.ToBusiness(raceEvent);
+        }
+
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByAddress(string Address, CancellationToken cancellationToken)
+    {
+        var raceEvent = await _dbContext.RaceEvents
+                .Where(x => x.Address == Address)
+                .ToListAsync(cancellationToken);
+
+        return RaceEventModelMapper.ToBusiness(raceEvent);
+    }
 
     public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByCityNameAsync(string CityName, CancellationToken cancellationToken)
     {
@@ -49,6 +64,24 @@ namespace KayakMeetUpService.Data.Query;
         return RaceEventModelMapper.ToBusiness(raceEvent);
     }
 
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByName(string eventName, CancellationToken cancellationToken)
+    {
+        var raceEvent = await _dbContext.RaceEvents
+                 .Where(x => x.EventName == eventName)
+                 .ToListAsync(cancellationToken);
+
+        return RaceEventModelMapper.ToBusiness(raceEvent);
+    }
+
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByPrizePool(int Prizepool, CancellationToken cancellationToken)
+    {
+        var raceEvent = await _dbContext.RaceEvents
+                 .Where(x => x.PrizePool == Prizepool)
+                 .ToListAsync(cancellationToken);
+
+        return RaceEventModelMapper.ToBusiness(raceEvent);
+    }
+
     public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByStateAsync(State state, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
@@ -58,7 +91,7 @@ namespace KayakMeetUpService.Data.Query;
         return RaceEventModelMapper.ToBusiness(raceEvent);
     }
 
-    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByZipCodeAsync(int ZipCode, CancellationToken cancellationToken)
+    public async Task<IList<Abstractions.Models.RaceEvent>> GetEventByZipCodeAsync(string ZipCode, CancellationToken cancellationToken)
     {
         var raceEvent = await _dbContext.RaceEvents
                 .Where(x => x.ZipCode == ZipCode)
