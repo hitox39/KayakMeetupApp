@@ -1,6 +1,6 @@
 
 
-export default interface CasualEvent {
+export default interface FishingEvent {
     id: string,
     eventName: string, 
     address: string,

@@ -30,7 +30,6 @@ namespace KayakMeetUpService.Data.Models
                 Country = raceEvent.Country,
                 Id = raceEvent.Id,
                 Address = raceEvent.Address,
-                PrizePool = raceEvent.PrizePool,
                 ZipCode = raceEvent.ZipCode,
             };
         }

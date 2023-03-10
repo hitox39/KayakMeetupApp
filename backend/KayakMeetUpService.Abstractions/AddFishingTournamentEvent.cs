@@ -11,6 +11,5 @@ namespace KayakMeetUpService.Abstractions
         public string ZipCode { get; set; }
         public string Address { get; set; }
         public string Country { get; set; }
-        public int PrizePool { get; set; }
     }
 }

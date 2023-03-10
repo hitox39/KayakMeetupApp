@@ -16,7 +16,6 @@ namespace KayakMeetUpService.Data.Models
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };
         }
@@ -31,7 +30,6 @@ namespace KayakMeetUpService.Data.Models
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };
         }
@@ -47,7 +45,6 @@ namespace KayakMeetUpService.Data.Models
                 State = fishingTournamentEvent.State,
                 Country = fishingTournamentEvent.Country,
                 Id = fishingTournamentEvent.Id,
-                PrizePool = fishingTournamentEvent.PrizePool,
                 ZipCode = fishingTournamentEvent.ZipCode,
             };
         }

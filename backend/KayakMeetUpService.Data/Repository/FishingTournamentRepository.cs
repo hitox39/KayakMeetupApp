@@ -41,7 +41,6 @@ namespace KayakMeetUpService.Data.Repository
 
             FishingTournamentEvent.State = fishingTournamentEvent.State;
             FishingTournamentEvent.EventName = fishingTournamentEvent.EventName;
-            FishingTournamentEvent.PrizePool = fishingTournamentEvent.PrizePool;
             FishingTournamentEvent.CityName = fishingTournamentEvent.CityName;
             FishingTournamentEvent.ZipCode = fishingTournamentEvent.ZipCode;
             FishingTournamentEvent.Address = fishingTournamentEvent.Address;

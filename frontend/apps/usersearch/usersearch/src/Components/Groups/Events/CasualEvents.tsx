@@ -6,7 +6,7 @@ export default function CasualEvents() {
 
   const [casualEvent, setCasualEvent] = useState<CasualEvent>({
     address: "",
-    city: "",
+    cityName: "",
     country: "",
     eventName: "",
     state: State.None,
@@ -53,7 +53,7 @@ export default function CasualEvents() {
             <td>{casualEvent.id}</td>
             <td>{casualEvent.eventName}</td>
             <td>{casualEvent.address}</td>
-            <td>{casualEvent.city}</td>
+            <td>{casualEvent.cityName}</td>
             <td>{casualEvent.state}</td>
             <td>{casualEvent.zipCode}</td>
             <td>{casualEvent.country}</td>

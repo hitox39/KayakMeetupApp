@@ -81,10 +81,8 @@ public class MainContext : DbContext
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Country)
             .IsRequired()
             .HasMaxLength(50);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.PrizePool)
-            .IsRequired()
-            .HasMaxLength(10);
     }
+        
 
     private static void UserTable(ModelBuilder modelBuilder)
     {

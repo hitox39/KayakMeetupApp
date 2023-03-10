@@ -5,10 +5,11 @@ import AddRaceForm from "./AddRaceForm";
 
 export default function AddEvents() {
 
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState<boolean>(false);
     const [eventType, setEventType] = useState("");
 
     function handleShowForm(e: React.ChangeEvent<HTMLSelectElement>){
+
         if (e.currentTarget.value === "" ){
             setEventType("");
             setShowForm(false);
