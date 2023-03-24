@@ -1,6 +1,5 @@
 ﻿using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using KayakMeetUpService.Abstractions.Interfaces.IRepo;
-using KayakMeetUpService.Data.Models;
 using CasualMeetUpEvent = KayakMeetUpService.Abstractions.Models.CasualMeetUpEvent;
 
 namespace KayakMeetUpService.Domains
@@ -9,13 +8,13 @@ namespace KayakMeetUpService.Domains
     {
         private readonly ICasualMeetUpEventRepository _casualMeetUpEventRepository;
         private readonly ICasualMeetUpEventQuery _casualMeetUpEventQuery;
-        private readonly ILogger _logger;
+        private readonly ILogger<CasualMeetUpUseCases> _logger;
 
 
         public CasualMeetUpUseCases(
             ICasualMeetUpEventRepository casualMeetUpEventRepository,
             ICasualMeetUpEventQuery casualMeetUpEventQuery, 
-            ILogger logger
+            ILogger<CasualMeetUpUseCases> logger
             )
         {
             _casualMeetUpEventRepository = casualMeetUpEventRepository;

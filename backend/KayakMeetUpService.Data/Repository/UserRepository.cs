@@ -1,3 +1,4 @@
+using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using KayakMeetUpService.Abstractions.Interfaces.IRepo;
 using KayakMeetUpService.Data.Models;
 
@@ -7,11 +8,11 @@ namespace KayakMeetUpService.Data;
 public class UserRepository : IUserRepository
 {
     private readonly MainContext _dbContext;
-    private readonly UserQueries _userQueries;
+    private readonly IUserQuery _userQueries;
 
 
 
-    public UserRepository(MainContext dbContext, UserQueries userQueries)
+    public UserRepository(MainContext dbContext, IUserQuery userQueries)
     {
         _dbContext = dbContext;
         _userQueries = userQueries;

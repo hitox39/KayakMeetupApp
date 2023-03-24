@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using KayakMeetUpService.Abstractions.Models;
@@ -38,18 +38,18 @@ public class MainContext : DbContext
         modelBuilder.Entity<RaceEvent>().Property(re => re.CityName)
             .IsRequired()
             .HasMaxLength(95);
+        modelBuilder.Entity<RaceEvent>().Property(re => re.Address)
+           .IsRequired()
+           .HasMaxLength(95);
+        modelBuilder.Entity<RaceEvent>().Property(re => re.EventName)
+           .IsRequired()
+           .HasMaxLength(95);
         modelBuilder.Entity<RaceEvent>().Property(re => re.State)
             .IsRequired()
             .HasMaxLength(15);
         modelBuilder.Entity<RaceEvent>().Property(re => re.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<RaceEvent>().Property(re => re.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<RaceEvent>().Property(re => re.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<RaceEvent>().Property(re => re.Country)
             .IsRequired()
             .HasMaxLength(50);
@@ -66,25 +66,23 @@ public class MainContext : DbContext
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.CityName)
             .IsRequired()
             .HasMaxLength(95);
+        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.EventName)
+            .IsRequired()
+            .HasMaxLength(95);
+        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Address)
+            .IsRequired()
+            .HasMaxLength(95);
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.State)
             .IsRequired()
             .HasMaxLength(15);
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Country)
             .IsRequired()
             .HasMaxLength(50);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.PrizePool)
-            .IsRequired()
-            .HasMaxLength(10);
     }
+        
 
     private static void UserTable(ModelBuilder modelBuilder)
     {
@@ -110,9 +108,6 @@ public class MainContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<User>().Property(u => u.DateOfBirth)
             .IsRequired();
-        modelBuilder.Entity<User>().Property(u => u.Boat)
-            .IsRequired();
-
     }
 
     private static void CasualMeetUpEventTable(ModelBuilder modelBuilder)
@@ -122,21 +117,15 @@ public class MainContext : DbContext
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Address)
             .IsRequired()
             .HasMaxLength(95);
-        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Address)
+        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.EventName)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(95);
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.State)
             .IsRequired()
             .HasMaxLength(15);
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Country)
             .IsRequired()
             .HasMaxLength(50);

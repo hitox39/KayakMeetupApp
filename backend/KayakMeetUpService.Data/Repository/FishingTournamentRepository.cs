@@ -40,11 +40,10 @@ namespace KayakMeetUpService.Data.Repository
             var FishingTournamentEvent = await _fishingEventQueries.GetEventAsync(fishingTournamentEvent.Id, cancellationToken);
 
             FishingTournamentEvent.State = fishingTournamentEvent.State;
+            FishingTournamentEvent.EventName = fishingTournamentEvent.EventName;
             FishingTournamentEvent.CityName = fishingTournamentEvent.CityName;
             FishingTournamentEvent.ZipCode = fishingTournamentEvent.ZipCode;
             FishingTournamentEvent.Address = fishingTournamentEvent.Address;
-            FishingTournamentEvent.Longitude = fishingTournamentEvent.Longitude;
-            FishingTournamentEvent.Latitude = fishingTournamentEvent.Latitude;
             FishingTournamentEvent.Country = fishingTournamentEvent.Country;
 
             await _dbContext.SaveChangesAsync(cancellationToken);

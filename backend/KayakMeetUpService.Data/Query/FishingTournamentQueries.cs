@@ -31,11 +31,16 @@ namespace KayakMeetUpService.Data.Query
             return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent);
         }
 
-        public async Task<FishingTournamentEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<FishingTournamentEvent?> GetEventAsync(Guid id, CancellationToken cancellationToken)
         {
             var fishingTournamentEvent = await _dbContext.FishingTournamentEvents
             .Where(x => x.Id == id)
-            .SingleAsync(cancellationToken);
+            .SingleOrDefaultAsync(cancellationToken);
+
+            if (fishingTournamentEvent == null)
+            {
+                return null;
+            }
 
             return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent);
         }
@@ -67,7 +72,7 @@ namespace KayakMeetUpService.Data.Query
             return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent);
         }
 
-        public async Task<IList<FishingTournamentEvent>> GetEventsByZipCodeAsync(int zipCode, CancellationToken cancellationToken)
+        public async Task<IList<FishingTournamentEvent>> GetEventsByZipCodeAsync(string zipCode, CancellationToken cancellationToken)
         {
             var fishingTournamentEvent = await _dbContext.FishingTournamentEvents
             .Where(x => x.ZipCode == zipCode)
@@ -75,5 +80,25 @@ namespace KayakMeetUpService.Data.Query
 
             return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent); ;
         }
+
+        public async Task<IList<FishingTournamentEvent>> GetEventsByName(string eventName, CancellationToken cancellationToken)
+        {
+            var fishingTournamentEvent = await _dbContext.FishingTournamentEvents
+             .Where(x => x.EventName == eventName)
+             .ToListAsync(cancellationToken);
+
+            return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent);
+        }
+
+        public async Task<IList<FishingTournamentEvent>> GetEventsByAddress(string address, CancellationToken cancellationToken)
+        {
+            var fishingTournamentEvent = await _dbContext.FishingTournamentEvents
+             .Where(x => x.Address == address)
+             .ToListAsync(cancellationToken);
+
+            return FishingTournamentModelMapper.ToBusiness(fishingTournamentEvent);
+        }
+
+
     }
 }

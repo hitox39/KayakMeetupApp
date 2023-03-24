@@ -9,13 +9,13 @@ namespace KayakMeetUpService.Domains
 
         private readonly IRaceEventRepository _raceEventRepository;
         private readonly IRaceEventQuery _raceEventQuery;
-        private readonly ILogger _logger;
+        private readonly ILogger<RaceEventUseCases> _logger;
 
 
         public RaceEventUseCases(
             IRaceEventRepository raceEventRepository,
             IRaceEventQuery raceEventQuery,
-            ILogger logger
+            ILogger<RaceEventUseCases> logger
             )
         {
             _raceEventRepository = raceEventRepository;

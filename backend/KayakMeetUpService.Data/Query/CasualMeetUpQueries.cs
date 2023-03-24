@@ -3,8 +3,7 @@ using KayakMeetUpService.Abstractions.Interfaces.IQuery;
 using State = KayakMeetUpService.Abstractions.Models.State;
 using CasualMeetUpEvent = KayakMeetUpService.Abstractions.Models.CasualMeetUpEvent;
 using KayakMeetUpService.Data.Models;
-using KayakMeetUpService.Abstractions;
-using KayakMeetUpService.Abstractions.Models;
+using KayakMeetUpService.Data.Repository;
 
 namespace KayakMeetUpService.Data.Query;
 
@@ -24,11 +23,16 @@ public class CasualMeetUpQueries : ICasualMeetUpEventQuery
         return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
 
-    public async Task<CasualMeetUpEvent> GetEventAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<CasualMeetUpEvent?> GetEventAsync(Guid id, CancellationToken cancellationToken)
     {
         var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
             .Where(x => x.Id == id)
-            .SingleAsync(cancellationToken);
+            .SingleOrDefaultAsync(cancellationToken);
+
+        if(casualMeetUpEvent== null)
+        {
+            return null;
+        }
 
         return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
@@ -39,7 +43,7 @@ public class CasualMeetUpQueries : ICasualMeetUpEventQuery
             .Where(x => x.CityName == cityName)
             .ToListAsync(cancellationToken);
 
-           return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
 
     public async Task<IList<CasualMeetUpEvent>> GetEventsByCountry(string country, CancellationToken cancellationToken)
@@ -48,7 +52,7 @@ public class CasualMeetUpQueries : ICasualMeetUpEventQuery
              .Where(x => x.Country == country)
              .ToListAsync(cancellationToken);
 
-             return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); 
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
 
     public async Task<IList<CasualMeetUpEvent>> GetEventsByStateAsync(State state, CancellationToken cancellationToken)
@@ -57,16 +61,16 @@ public class CasualMeetUpQueries : ICasualMeetUpEventQuery
             .Where(x => x.State == state)
             .ToListAsync(cancellationToken);
 
-            return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); 
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent);
     }
 
-    public async Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(int zipCode, CancellationToken cancellationToken)
+    public async Task<IList<CasualMeetUpEvent>> GetEventsByZipCodeAsync(string zipCode, CancellationToken cancellationToken)
     {
         var casualMeetUpEvent = await _dbContext.CasualMeetUpEvents
             .Where(x => x.ZipCode == zipCode)
             .ToListAsync(cancellationToken);
 
-            return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); ;
+        return CasualMeetUpModelMapper.ToBusiness(casualMeetUpEvent); ;
     }
 
 }

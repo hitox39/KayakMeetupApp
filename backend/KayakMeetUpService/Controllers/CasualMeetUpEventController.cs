@@ -6,7 +6,7 @@ using KayakMeetUpService.Domains;
 
 namespace KayakMeetUpService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/casualevent")]
     [ApiController]
     public class CasualMeetUpEventController : ControllerBase
     {

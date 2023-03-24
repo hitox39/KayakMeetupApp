@@ -51,8 +51,7 @@ builder.Services.AddScoped<IRaceEventQuery, RaceEventQueries>();
 builder.Services.AddScoped<IRaceEventRepository, RaceEventRepository>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserQuery, UserQueries>();
-
+builder.Services.AddScoped<IUserQuery, UserQuery>();
 
 
 
