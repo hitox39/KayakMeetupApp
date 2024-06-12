@@ -1,6 +1,8 @@
-﻿namespace KayakMeetupService.Data.Models
+﻿using KayakMeetupService.Abstractions.Models;
+
+namespace KayakMeetupService.Application.Models.Event
 {
-    public class Event : BaseEntity
+    public class Event
     {
         public Guid Id { get; set; }
         public string EventName { get; set; } = string.Empty;

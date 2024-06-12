@@ -1,4 +1,4 @@
-﻿namespace KayakMeetupService.Data.Models;
+﻿namespace KayakMeetupService.Application.Models;
 
 public class User
 {

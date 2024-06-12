@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KayakMeetupService.Abstractions.Interfaces.IRepo;
-using KayakMeetupService.Data.Models;
+﻿using KayakMeetupService.Data.Models;
 using KayakMeetupService.Data.Query;
-using CasualMeetUpEvent = KayakMeetupService.Abstractions.Models.CasualMeetUpEvent;
 
 namespace KayakMeetupService.Data.Repository
 {
     public class CasualMeetupRepository : ICasualMeetUpEventRepository
-
     {
         private readonly MainContext _dbContext;
         private readonly CasualMeetUpQueries _casualMeetUpQueries;
@@ -26,7 +18,6 @@ namespace KayakMeetupService.Data.Repository
         {
             await _dbContext.CasualMeetUpEvents.AddAsync(CasualMeetUpModelMapper.ToDatabase(casualMeetUpEvent), cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-
         }
 
         public async Task DeleteCasualMeetUpEventAsync(Guid id, CancellationToken cancellationToken)

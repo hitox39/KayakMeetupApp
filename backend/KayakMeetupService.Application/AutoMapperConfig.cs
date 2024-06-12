@@ -1,7 +1,6 @@
 ﻿namespace KayakMeetupService
 {
-    public class UpdateUserRequest
+    public class AutoMapperConfig : Profile
     {
-
     }
 }

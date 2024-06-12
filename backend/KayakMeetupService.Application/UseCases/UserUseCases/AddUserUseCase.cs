@@ -1,5 +1,5 @@
 ﻿using KayakMeetupService.Abstractions.Interfaces.IRepo;
-using KayakMeetupService.Application.Models;
+using KayakMeetupService.Application.Models.User;
 
 namespace KayakMeetupService.Application.UseCases.UserUseCases;
 

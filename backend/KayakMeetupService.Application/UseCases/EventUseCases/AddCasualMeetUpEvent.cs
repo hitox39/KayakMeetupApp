@@ -1,4 +1,5 @@
 ﻿using KayakMeetupService.Abstractions.Models;
+using KayakMeetupService.Application.Models.Event;
 
 namespace KayakMeetupService.Application.UseCases.EventUseCases
 {

@@ -1,4 +1,4 @@
-﻿namespace KayakMeetupService.Abstractions.Models
+﻿namespace KayakMeetupService.Application.Models
 {
     public enum State
     {

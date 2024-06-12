@@ -1,20 +1,21 @@
-﻿using KayakMeetupService.Abstractions.Interfaces;
-using KayakMeetupService.Abstractions.Interfaces.IQuery;
+﻿using KayakMeetupService.Abstractions.Interfaces.IQuery;
 using KayakMeetupService.Abstractions.Interfaces.IRepo;
 using KayakMeetupService.Abstractions.Models;
+using KayakMeetupService.Application.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Application.Models.Event;
 using Microsoft.Extensions.Logging;
 
 namespace KayakMeetupService.Application.UseCases.EventUseCases;
 
-public class FishingEventService : IEvent<FishingTournamentEvent>
+public class FishingEventUseCase : IEvent<FishingTournamentEvent>
 {
     private readonly IFishingTournamentRepository _fishingTournamentRepository;
-    private readonly ILogger<FishingEventService> _logger;
+    private readonly ILogger<FishingEventUseCase> _logger;
     private readonly IFishingTournamentQueries _fishingTournamentQuery;
 
-    public FishingEventService(
+    public FishingEventUseCase(
         IFishingTournamentRepository fishingTournamentRepository,
-        ILogger<FishingEventService> logger, 
+        ILogger<FishingEventUseCase> logger, 
         IFishingTournamentQueries fishingTournamentQuery
         )
     {
@@ -26,6 +27,7 @@ public class FishingEventService : IEvent<FishingTournamentEvent>
     public async Task AddEventAsync(FishingTournamentEvent FishingTournamentEvent, CancellationToken cancellationToken)
     {
         FishingTournamentEvent.Id = Guid.NewGuid();
+       
 
         await _fishingTournamentRepository.AddEventAsync(FishingTournamentEvent, cancellationToken);
 
@@ -46,6 +48,5 @@ public class FishingEventService : IEvent<FishingTournamentEvent>
     public async Task UpdateEventAsync(FishingTournamentEvent fishingTournamentEvent, CancellationToken cancellationToken)
     {
         var updatedEvent = await _fishingTournamentRepository.UpdateEventAsync(fishingTournamentEvent, cancellationToken);
-
     }
 }
