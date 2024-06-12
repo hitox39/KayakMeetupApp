@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService", "backend\UserLookupService\KayakMeetupService.csproj", "{DCA3CA93-7F3C-4999-9FC4-1BE961A3658B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService", "backend\KayakMeetupService\KayakMeetupService.csproj", "{DCA3CA93-7F3C-4999-9FC4-1BE961A3658B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{54326FB1-2A0E-44C7-8C42-8D7C8E557435} = {54326FB1-2A0E-44C7-8C42-8D7C8E557435}
 		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {6091A0ED-1F52-410C-A680-800BEF64D05D}
@@ -24,14 +24,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Shared", "2 - Shared", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{FE09DC75-29D7-4355-BD32-6433DA8D05B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Data", "backend\UserLookupService.Data\KayakMeetupService.Data.csproj", "{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Data", "backend\KayakMeetupService.Data\KayakMeetupService.Data.csproj", "{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Application", "KayakMeetUpService.Application\KayakMeetupService.Application.csproj", "{54326FB1-2A0E-44C7-8C42-8D7C8E557435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Application", "backend\KayakMeetupService.Application\KayakMeetupService.Application.csproj", "{54326FB1-2A0E-44C7-8C42-8D7C8E557435}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {6091A0ED-1F52-410C-A680-800BEF64D05D}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Application.Abstractions", "KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj", "{6091A0ED-1F52-410C-A680-800BEF64D05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "backend\KayakMeetupService.Application.Abstractions", "KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj", "{6091A0ED-1F52-410C-A680-800BEF64D05D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E} = {1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}
 	EndProjectSection

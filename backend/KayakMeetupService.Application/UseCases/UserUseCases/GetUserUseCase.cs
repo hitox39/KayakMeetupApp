@@ -2,7 +2,7 @@
 using KayakMeetupService.Abstractions.Interfaces.IQuery;
 using Microsoft.Extensions.Logging;
 
-namespace KayakMeetupService.Application.UseCases;
+namespace KayakMeetupService.Application.UseCases.UserUseCases;
 
 public class GetUserUseCase
 {

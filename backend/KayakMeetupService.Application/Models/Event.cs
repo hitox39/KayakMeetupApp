@@ -1,6 +1,8 @@
-﻿namespace KayakMeetupService.Application.Models
+﻿using KayakMeetupService.Abstractions.Interfaces;
+
+namespace KayakMeetupService.Abstractions.Models
 {
-    public class RaceEvent : Event
+    public class Event 
     {
         public Guid Id { get; set; }
         public string CityName { get; set; }

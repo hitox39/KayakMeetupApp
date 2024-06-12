@@ -2,7 +2,7 @@
 using KayakMeetupService.Abstractions.Interfaces.IRepo;
 using Microsoft.Extensions.Logging;
 
-namespace KayakMeetupService.Application.UseCases;
+namespace KayakMeetupService.Application.UseCases.UserUseCases;
 
 
 public class DeleteUserUseCase
@@ -22,5 +22,5 @@ public class DeleteUserUseCase
     {
         _logger.LogInformation("Attempting to delete user: [{userId}]", userId);
         await _userRepository.DeleteUserAsync(userId, cancellationToken);
-    } 
+    }
 }

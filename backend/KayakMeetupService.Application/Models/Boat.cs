@@ -2,8 +2,8 @@
 {
     public class Boat
     {
-        public string Make { get; set; } = string.Empty;
-        public string Model { get; set; } = string.Empty;
+        public string Make { get; set; }
+        public string Model { get; set; }
         public int YearMade { get; set; }
     }
 }
