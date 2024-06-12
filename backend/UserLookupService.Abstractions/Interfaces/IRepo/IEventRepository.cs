@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using UserLookupService.Abstractions.Models;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Abstractions.Interfaces.IRepo
+namespace KayakMeetupService.Abstractions.Interfaces.IRepo
 {
     public interface IEventRepository
     {

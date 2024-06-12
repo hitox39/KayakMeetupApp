@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Data.Models;
+namespace KayakMeetupService.Data.Models;
 
 public class User
 {
@@ -13,5 +13,5 @@ public class User
     public State State { get; set; } = State.None;
     public string? CityName { get; set; } = "";
     public string? ZipCode { get; set; } = "";
-    public Boat Boat { get; set; }
+    public Boat? Boat { get; set; }
 }

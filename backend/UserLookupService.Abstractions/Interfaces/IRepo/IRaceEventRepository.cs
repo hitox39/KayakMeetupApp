@@ -1,4 +1,4 @@
-﻿namespace UserLookupService.Abstractions.Interfaces.IRepo
+﻿namespace KayakMeetupService.Abstractions.Interfaces.IRepo
 {
     public interface IRaceEventRepository 
     {

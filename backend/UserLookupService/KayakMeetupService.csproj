@@ -25,8 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserLookupService.Abstractions\UserLookupService.Abstractions.csproj" />
-    <ProjectReference Include="..\UserLookupService.Data\UserLookupService.Data.csproj" />
+    <ProjectReference Include="..\..\KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\..\KayakMeetUpService.Application\KayakMeetupService.Application.csproj" />
+    <ProjectReference Include="..\KayakMeetupService.Abstractions\KayakMeetupService.Abstractions.csproj" />
+    <ProjectReference Include="..\KayakMeetupService.Data\KayakMeetupService.Data.csproj" />
+    <ProjectReference Include="..\UserLookupService.Data\KayakMeetupService.Data.csproj" />
   </ItemGroup>
 
 </Project>

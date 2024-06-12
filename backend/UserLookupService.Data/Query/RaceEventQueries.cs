@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Data.Models;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using KayakMeetupService.Abstractions.Models;
+using KayakMeetupService.Data.Models;
 
 
-namespace UserLookupService.Data.Query;
+namespace KayakMeetupService.Data.Query;
 
     public class RaceEventQueries : IRaceEventQuery
     {

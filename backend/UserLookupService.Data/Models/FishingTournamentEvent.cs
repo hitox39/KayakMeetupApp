@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UserLookupService.Abstractions.Interfaces;
-using UserLookupService.Abstractions.Models;
+using KayakMeetupService.Abstractions.Interfaces;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetupService.Data.Models
 {
     public class FishingTournamentEvent
     {

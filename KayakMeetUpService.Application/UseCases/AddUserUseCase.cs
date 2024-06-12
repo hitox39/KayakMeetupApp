@@ -1,7 +1,8 @@
-﻿using UserLookupService.Abstractions;
-using UserLookupService.Abstractions.Interfaces.IRepo;
+﻿using KayakMeetupService.Abstractions;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Application.Models;
 
-namespace UserLookupService.Domains;
+namespace KayakMeetupService.Application.UseCases;
 
 public class AddUserUseCase
 {

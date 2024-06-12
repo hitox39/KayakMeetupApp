@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using State = UserLookupService.Abstractions.Models.State;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
-using UserLookupService.Data.Models;
-using UserLookupService.Abstractions;
-using UserLookupService.Abstractions.Models;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using State = KayakMeetupService.Abstractions.Models.State;
+using CasualMeetUpEvent = KayakMeetupService.Abstractions.Models.CasualMeetUpEvent;
+using KayakMeetupService.Data.Models;
+using KayakMeetupService.Abstractions;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Data.Query;
+namespace KayakMeetupService.Data.Query;
 
 public class CasualMeetUpQueries : ICasualMeetUpEventQuery
 {

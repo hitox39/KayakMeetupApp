@@ -1,6 +1,6 @@
-﻿using UserLookupService.Abstractions.Models;
+﻿using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Abstractions
+namespace KayakMeetupService.Abstractions
 {
     public class AddRaceEvent
     {

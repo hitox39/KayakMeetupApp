@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UserLookupService.Data;
+using KayakMeetupService.Data;
 
 #nullable disable
 
-namespace UserLookupService.Data.Migrations
+namespace KayakMeetupService.Data.Migrations
 {
     [DbContext(typeof(MainContext))]
     [Migration("20220123190159_AddUserTable")]
@@ -24,7 +24,7 @@ namespace UserLookupService.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("UserLookupService.Data.User", b =>
+            modelBuilder.Entity("KayakMeetupService.Data.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

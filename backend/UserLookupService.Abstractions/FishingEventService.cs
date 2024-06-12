@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using System.Threading;
-using UserLookupService.Abstractions.Interfaces;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Abstractions.Models;
+﻿using KayakMeetupService.Abstractions.Interfaces;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Abstractions;
+namespace KayakMeetupService.Abstractions;
 
 public class FishingEventService : IEvent<FishingTournamentEvent>
 {

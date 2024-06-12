@@ -1,7 +1,7 @@
-﻿using UserLookupService.Abstractions;
-using UserLookupService.Abstractions.Models;
+﻿using KayakMeetupService.Abstractions;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Abstractions.Interfaces.IQuery;
+namespace KayakMeetupService.Abstractions.Interfaces.IQuery;
 
 public interface IUserQuery
 {

@@ -6,13 +6,13 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Data.Models;
-using FishingTournamentEvent = UserLookupService.Abstractions.Models.FishingTournamentEvent;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using KayakMeetupService.Abstractions.Models;
+using KayakMeetupService.Data.Models;
+using FishingTournamentEvent = KayakMeetupService.Abstractions.Models.FishingTournamentEvent;
 
 
-namespace UserLookupService.Data.Query
+namespace KayakMeetupService.Data.Query
 {
     internal class FishingEventQueries : IFishingTournamentQueries
     {

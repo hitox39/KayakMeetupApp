@@ -1,4 +1,4 @@
-﻿namespace UserLookupService
+﻿namespace KayakMeetupService
 {
     public class UpdateUserRequest
     {

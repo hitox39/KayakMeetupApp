@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using UserLookupService.Data.Query;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using FishingTournamentEvent = UserLookupService.Abstractions.Models.FishingTournamentEvent;
-using UserLookupService.Abstractions.Models;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Data.Models;
+using KayakMeetupService.Data.Query;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using FishingTournamentEvent = KayakMeetupService.Abstractions.Models.FishingTournamentEvent;
+using KayakMeetupService.Abstractions.Models;
 
-namespace UserLookupService.Data.Repository
+namespace KayakMeetupService.Data.Repository
 {
     public class FishingTournamentRepository : IFishingTournamentRepository
     {

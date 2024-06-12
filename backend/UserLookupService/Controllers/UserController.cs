@@ -1,9 +1,7 @@
+using KayakMeetupService.Application.UseCases;
 using Microsoft.AspNetCore.Mvc;
-using UserLookupService.Domains;
-using UserLookupService.Abstractions;
-using UserLookupService.Data;
 
-namespace UserLookupService.Controllers;
+namespace KayakMeetupService.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -19,8 +17,13 @@ public class UserController : ControllerBase
         _serviceProvider = serviceProvider;
     }
 
-    [HttpGet("{id:Guid}")]
-    public async Task<IActionResult> GetUserById([FromRoute] Guid id, CancellationToken cancellationToken)
+    [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetUserById(
+        [FromRoute] Guid id,
+        CancellationToken cancellationToken
+        )
     {
         var getUserUseCase = _serviceProvider.GetRequiredService<GetUserUseCase>();
 
@@ -29,8 +32,12 @@ public class UserController : ControllerBase
         return Ok(user);
     }
 
+    [ProducesResponseType(typeof(IEnumerable<User>), StatusCodes.Status200OK)]
     [HttpPost]
-    public async Task<IActionResult> AddUser([FromBody] AddUser user, CancellationToken cancellationToken)
+    public async Task<IActionResult> AddUser(
+        [FromBody] AddUser user, 
+        CancellationToken cancellationToken = default
+        )
     {
         var addUserUseCase = _serviceProvider.GetRequiredService<AddUserUseCase>();
 
@@ -40,7 +47,10 @@ public class UserController : ControllerBase
     }
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteUserAsync([FromRoute] Guid id, CancellationToken cancellationToken = default)
+    public async Task<IActionResult> DeleteUserAsync(
+        [FromRoute] Guid id, 
+        CancellationToken cancellationToken = default
+        )
     {
         var deleteUserUseCase = _serviceProvider.GetRequiredService<DeleteUserUseCase>();
 
@@ -51,7 +61,10 @@ public class UserController : ControllerBase
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateUser([FromBody] User user, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateUser(
+        [FromBody] User user, 
+        CancellationToken cancellationToken = default
+        )
     {
         
         var updateUserUseCase = _serviceProvider.GetRequiredService<UpdateUserUseCase>();

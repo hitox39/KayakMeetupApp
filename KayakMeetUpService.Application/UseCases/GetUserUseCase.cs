@@ -1,7 +1,8 @@
-﻿using UserLookupService.Abstractions;
-using UserLookupService.Abstractions.Interfaces.IQuery;
+﻿using KayakMeetupService.Abstractions;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using Microsoft.Extensions.Logging;
 
-namespace UserLookupService.Domains;
+namespace KayakMeetupService.Application.UseCases;
 
 public class GetUserUseCase
 {

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RaceEvent = UserLookupService.Abstractions.RaceEvent;
-using UserLookupService.Abstractions.Interfaces.IRepo;
-using UserLookupService.Data.Models;
-using UserLookupService.Data.Query;
-using UserLookupService.Abstractions.Models;
+using RaceEvent = KayakMeetupService.Abstractions.RaceEvent;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Data.Models;
+using KayakMeetupService.Data.Query;
+using KayakMeetupService.Abstractions.Models;
 
 
-namespace UserLookupService.Data.Repository
+namespace KayakMeetupService.Data.Repository
 {
     public class RaceEventRepository : IRaceEventRepository
     {

@@ -1,27 +1,19 @@
-﻿using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using UserLookupService.Abstractions.Models;
-using UserLookupService.Data.Models;
-using FishingTournamentEvent = UserLookupService.Data.Models.FishingTournamentEvent;
-using RaceEvent = UserLookupService.Data.Models.RaceEvent;
-using User = UserLookupService.Data.Models.User;
-using CasualMeetUpEvent = UserLookupService.Data.Models.CasualMeetUpEvent;
+﻿using Microsoft.EntityFrameworkCore;
+using FishingTournamentEvent = KayakMeetupService.Data.Models.FishingTournamentEvent;
+using RaceEvent = KayakMeetupService.Data.Models.RaceEvent;
+using User = KayakMeetupService.Data.Models.User;
+using CasualMeetUpEvent = KayakMeetupService.Data.Models.CasualMeetUpEvent;
 
-namespace UserLookupService.Data;
+namespace KayakMeetupService.Data;
 
 public class MainContext : DbContext
-{
+{ 
+    public MainContext(DbContextOptions<MainContext> options) : base(options) { }
     public DbSet<User> Users { get; set; }
     public DbSet<RaceEvent> RaceEvents { get; set; }
     public DbSet<FishingTournamentEvent> FishingTournamentEvents { get; set; }
     public DbSet<CasualMeetUpEvent> CasualMeetUpEvents { get; set; }
 
-
-    public MainContext(DbContextOptions<MainContext> options) : base(options)
-    {
-
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,12 +36,6 @@ public class MainContext : DbContext
         modelBuilder.Entity<RaceEvent>().Property(re => re.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<RaceEvent>().Property(re => re.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<RaceEvent>().Property(re => re.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<RaceEvent>().Property(re => re.Country)
             .IsRequired()
             .HasMaxLength(50);
@@ -72,12 +58,6 @@ public class MainContext : DbContext
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<FishingTournamentEvent>().Property(ft => ft.Country)
             .IsRequired()
             .HasMaxLength(50);
@@ -110,9 +90,7 @@ public class MainContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<User>().Property(u => u.DateOfBirth)
             .IsRequired();
-        modelBuilder.Entity<User>().Property(u => u.Boat)
-            .IsRequired();
-
+        modelBuilder.Entity<User>().Property(u => u.Boat);
     }
 
     private static void CasualMeetUpEventTable(ModelBuilder modelBuilder)
@@ -131,17 +109,8 @@ public class MainContext : DbContext
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.ZipCode)
             .IsRequired()
             .HasMaxLength(12);
-        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Longitude)
-            .IsRequired()
-            .HasMaxLength(50);
-        modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Latitude)
-            .IsRequired()
-            .HasMaxLength(50);
         modelBuilder.Entity<CasualMeetUpEvent>().Property(cm => cm.Country)
             .IsRequired()
             .HasMaxLength(50);
     }
-
-
-
 }

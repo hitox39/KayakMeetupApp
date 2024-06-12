@@ -1,4 +1,4 @@
-﻿namespace UserLookupService.Abstractions.Interfaces
+﻿namespace KayakMeetupService.Abstractions.Interfaces
 {
     public interface IEvent<T>
     {

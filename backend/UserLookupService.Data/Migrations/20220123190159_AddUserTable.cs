@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace UserLookupService.Data.Migrations
+namespace KayakMeetupService.Data.Migrations
 {
     public partial class AddUserTable : Migration
     {

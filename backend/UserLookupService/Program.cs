@@ -1,9 +1,8 @@
-using UserLookupService.Domains;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using UserLookupService.Data;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Data;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
+using KayakMeetupService.Application.UseCases;
 
 var cors = "test";
 
@@ -22,18 +21,19 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 
 builder.Services.AddDbContext<MainContext>(o =>
-    o.UseSqlServer(builder.Configuration.GetConnectionString("User"),
-        b => b.MigrationsAssembly("UserLookupService.Data")));
+    o.UseSqlServer(builder.Configuration.GetConnectionString("KayakMeetupService"),
+        b => b.MigrationsAssembly("KayakMeetupService.Data")));
 
 
 builder.Services.AddControllers().AddJsonOptions(o =>
 {
     o.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
 });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserQuery, UserQueries>();
 builder.Services.AddScoped<GetUserUseCase>();
 builder.Services.AddScoped<AddUserUseCase>();

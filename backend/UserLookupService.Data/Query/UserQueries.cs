@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UserLookupService.Abstractions.Interfaces.IQuery;
-using UserLookupService.Data.Models;
-using State = UserLookupService.Abstractions.Models.State;
-using Boat = UserLookupService.Abstractions.Models.Boat;
+using KayakMeetupService.Abstractions.Interfaces.IQuery;
+using KayakMeetupService.Data.Models;
+using State = KayakMeetupService.Abstractions.Models.State;
+using Boat = KayakMeetupService.Abstractions.Models.Boat;
 
-namespace UserLookupService.Data;
+namespace KayakMeetupService.Data;
 
 public class UserQueries : IUserQuery
 {

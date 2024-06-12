@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CasualMeetUpEvent = UserLookupService.Abstractions.Models.CasualMeetUpEvent;
+using CasualMeetUpEvent = KayakMeetupService.Abstractions.Models.CasualMeetUpEvent;
 
-namespace UserLookupService.Data.Models
+namespace KayakMeetupService.Data.Models
 {
     public static class CasualMeetUpModelMapper
     {

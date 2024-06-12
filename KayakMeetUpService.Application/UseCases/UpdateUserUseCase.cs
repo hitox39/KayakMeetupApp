@@ -1,8 +1,8 @@
-﻿using UserLookupService.Abstractions;
-using UserLookupService.Abstractions.Interfaces.IRepo;
+﻿using KayakMeetupService.Abstractions;
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
 
 
-namespace UserLookupService.Domains;
+namespace KayakMeetupService.Application.UseCases;
 // controller, use case, interface, data base implementation 
 
 public class UpdateUserUseCase
