@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using KayakMeetupService.Data;
 using KayakMeetupService.Abstractions.Interfaces.IQuery;
 using KayakMeetupService.Abstractions.Interfaces.IRepo;
-using KayakMeetupService.Application.UseCases;
 
 var cors = "test";
 
@@ -35,10 +34,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserQuery, UserQueries>();
-builder.Services.AddScoped<GetUserUseCase>();
-builder.Services.AddScoped<AddUserUseCase>();
-builder.Services.AddScoped<DeleteUserUseCase>();
-builder.Services.AddScoped<UpdateUserUseCase>();
 
 var app = builder.Build();
 

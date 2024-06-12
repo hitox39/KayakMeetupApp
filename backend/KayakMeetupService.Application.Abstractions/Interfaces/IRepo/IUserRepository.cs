@@ -1,4 +1,4 @@
-using KayakMeetupService.Abstractions;
+using KayakMeetupService.Data.Models;
 
 namespace KayakMeetupService.Abstractions.Interfaces.IRepo;
 

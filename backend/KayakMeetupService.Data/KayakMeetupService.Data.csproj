@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KayakMeetupService.Abstractions\KayakMeetupService.Abstractions.csproj" />
+	  <ProjectReference Include="..\KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
-﻿using KayakMeetupService.Abstractions;
-using KayakMeetupService.Abstractions.Models;
+﻿using KayakMeetupService.Data.Models;
 
 namespace KayakMeetupService.Abstractions.Interfaces.IQuery;
 
@@ -10,5 +9,4 @@ public interface IUserQuery
     Task<IList<User>> GetUsersByStateAsync(State state, CancellationToken cancellationToken);
     Task<IList<User>> GetUsersByZipCodeAsync(string zipCode, CancellationToken cancellationToken);
     Task<IList<User>> GetUsersByBoatAsync(Boat boat, CancellationToken cancellationToken);
-
 }

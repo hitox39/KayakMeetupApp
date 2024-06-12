@@ -3,7 +3,7 @@ using KayakMeetupService.Data.Query;
 
 namespace KayakMeetupService.Data.Repository
 {
-    public class CasualMeetupRepository : ICasualMeetUpEventRepository
+    public class CasualMeetupRepository : IEventRepository
     {
         private readonly MainContext _dbContext;
         private readonly CasualMeetUpQueries _casualMeetUpQueries;
