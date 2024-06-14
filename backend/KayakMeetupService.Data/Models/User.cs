@@ -1,8 +1,9 @@
 ﻿namespace KayakMeetupService.Data.Models;
 
-public class User
+public class User : BaseEntity
 {
     public Guid Id { get; set; }
+    public string DisplayName { get; set; } = string.Empty;
     public string GivenName { get; set; } = string.Empty;
     public string FamilyName { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;

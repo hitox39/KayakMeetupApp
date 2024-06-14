@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace KayakMeetupService.Data;
 
 public class MainContext : DbContext
-{ 
+{
     public MainContext(DbContextOptions<MainContext> options) : base(options) { }
     public DbSet<User> Users { get; set; }
     public DbSet<Event> Events { get; set; }
@@ -39,6 +39,20 @@ public class MainContext : DbContext
             .HasMaxLength(128);
         modelBuilder.Entity<User>().Property(u => u.DateOfBirth)
             .IsRequired();
-        modelBuilder.Entity<User>().Property(u => u.Boat);
+        modelBuilder.Entity<User>().Property(u => u.Boat)
+            .IsRequired()
+            .HasMaxLength(50);
+        modelBuilder.Entity<User>().Property(u => u.PhoneNumber)
+            .IsRequired()
+            .HasMaxLength(20);
+        modelBuilder.Entity<User>().Property(u => u.CityName)
+            .IsRequired()
+            .HasMaxLength(50);
+        modelBuilder.Entity<User>().Property(u => u.IsDeleted)
+            .IsRequired();
+        modelBuilder.Entity<User>().Property(u => u.UpdatedOn)
+            .IsRequired();
+        modelBuilder.Entity<User>().Property(u => u.CreatedOn)
+            .IsRequired();
     }
 }

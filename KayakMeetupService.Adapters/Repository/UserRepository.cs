@@ -1,3 +1,4 @@
+using KayakMeetupService.Abstractions.Interfaces.IRepo;
 using KayakMeetupService.Data.Models;
 
 namespace KayakMeetupService.Data;
@@ -5,7 +6,7 @@ namespace KayakMeetupService.Data;
 public class UserRepository : IUserRepository
 {
     private readonly MainContext _dbContext;
-    private readonly UserQueries _userQueries;
+    private readonly IUserQueries _userQueries;
 
     public UserRepository(MainContext dbContext, UserQueries userQueries)
     {
@@ -13,9 +14,9 @@ public class UserRepository : IUserRepository
         _userQueries = userQueries;
     }
 
-    public async Task AddAsync(Abstractions.User user, CancellationToken cancellationToken)
+    public async Task AddAsync(User user, CancellationToken cancellationToken)
     {
-        await _dbContext.Users.AddAsync(UserModelMapper.ToDatabase(user), cancellationToken);
+        await _dbContext.Users.AddAsync(user, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
@@ -28,7 +29,7 @@ public class UserRepository : IUserRepository
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task UpdateUserAsync(Abstractions.User user, CancellationToken cancellationToken)
+    public async Task UpdateUserAsync(User user, CancellationToken cancellationToken)
     {
         var userUpdate = await _userQueries.GetUserAsync(user.Id, cancellationToken);
        

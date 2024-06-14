@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService", "backe
 	ProjectSection(ProjectDependencies) = postProject
 		{54326FB1-2A0E-44C7-8C42-8D7C8E557435} = {54326FB1-2A0E-44C7-8C42-8D7C8E557435}
 		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {6091A0ED-1F52-410C-A680-800BEF64D05D}
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2} = {B505E549-E950-4DEE-AD71-42D1986DFFD2}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Solution Items", "0 - Solution Items", "{6FC6F8E4-65A6-4186-9869-A9D4B022D487}"
@@ -24,19 +25,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Shared", "2 - Shared", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{FE09DC75-29D7-4355-BD32-6433DA8D05B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Data", "backend\KayakMeetupService.Data\KayakMeetupService.Data.csproj", "{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Data", "backend\KayakMeetUpService.Data\KayakMeetupService.Data.csproj", "{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Application", "backend\KayakMeetupService.Application\KayakMeetupService.Application.csproj", "{54326FB1-2A0E-44C7-8C42-8D7C8E557435}"
 	ProjectSection(ProjectDependencies) = postProject
+		{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E} = {1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}
 		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {6091A0ED-1F52-410C-A680-800BEF64D05D}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "backend\KayakMeetupService.Application.Abstractions", "KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj", "{6091A0ED-1F52-410C-A680-800BEF64D05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KayakMeetupService.Application.Abstractions", "backend\KayakMeetupService.Application.Abstractions\KayakMeetupService.Application.Abstractions.csproj", "{6091A0ED-1F52-410C-A680-800BEF64D05D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E} = {1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{90288A42-092C-4785-A175-60DEFB3D8405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KayakMeetupService.Adapters", "KayakMeetupService.Adapters\KayakMeetupService.Adapters.csproj", "{B505E549-E950-4DEE-AD71-42D1986DFFD2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E} = {1A8EB8EA-140D-485B-A85E-F3B33CD38D3E}
+		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {6091A0ED-1F52-410C-A680-800BEF64D05D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +68,10 @@ Global
 		{6091A0ED-1F52-410C-A680-800BEF64D05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6091A0ED-1F52-410C-A680-800BEF64D05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6091A0ED-1F52-410C-A680-800BEF64D05D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +81,7 @@ Global
 		{1A8EB8EA-140D-485B-A85E-F3B33CD38D3E} = {FE09DC75-29D7-4355-BD32-6433DA8D05B0}
 		{54326FB1-2A0E-44C7-8C42-8D7C8E557435} = {DA9AF666-F533-4465-9E97-31885244718E}
 		{6091A0ED-1F52-410C-A680-800BEF64D05D} = {DA9AF666-F533-4465-9E97-31885244718E}
+		{B505E549-E950-4DEE-AD71-42D1986DFFD2} = {DA9AF666-F533-4465-9E97-31885244718E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF9D936B-9EAC-44A9-9B0F-CEA19216C91A}
